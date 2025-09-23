@@ -1,425 +1,255 @@
+<?php
+// This is now a PHP file, but contains only HTML.
+// You can later add dynamic PHP code if needed.
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alivio247 - Coming Soon</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Tailwind Starter Template - Landing Page Template: Tailwind Toolbox
+    </title>
+    <meta name="description" content="Simple landind page" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #ffffff;
-            color: #333333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Subtle background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(0, 123, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(108, 117, 125, 0.02) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header section */
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .logo-container {
-            margin-bottom: 40px;
-        }
-
-        .logo {
-            width: 120px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .company-name {
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            letter-spacing: -2px;
-            position: relative;
-        }
-
-        .company-name::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #007bff, #6c757d);
-            border-radius: 2px;
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            color: #6c757d;
-            font-weight: 400;
-            margin-top: 25px;
-        }
-
-        /* Main content */
-        .main-content {
-            max-width: 800px;
-            text-align: center;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .coming-soon-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #007bff;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .coming-soon-subtitle {
-            font-size: 1.2rem;
-            color: #495057;
-            margin-bottom: 50px;
-            font-weight: 300;
-        }
-
-        /* What is Alivio247 section */
-        .about-section {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin: 40px 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e9ecef;
-            animation: fadeInUp 1s ease-out 0.6s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #007bff, #28a745, #17a2b8);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: #495057;
-            line-height: 1.8;
-            text-align: left;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Features highlight */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #007bff, #28a745);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-
-        .feature-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .feature-description {
-            font-size: 0.95rem;
-            color: #6c757d;
-            line-height: 1.6;
-        }
-
-        /* Call to action */
-        .cta-section {
-            margin-top: 60px;
-            animation: fadeInUp 1s ease-out 1.2s both;
-        }
-
-        .cta-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .cta-description {
-            font-size: 1rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-        }
-
-        .launch-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 500;
-            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .launch-indicator:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4);
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background: #28a745;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .company-name {
-                font-size: 2.5rem;
-                letter-spacing: -1px;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .coming-soon-title {
-                font-size: 2rem;
-            }
-
-            .about-section {
-                padding: 40px 25px;
-                margin: 30px 0;
-            }
-
-            .section-title {
-                font-size: 1.7rem;
-            }
-
-            .section-description {
-                font-size: 1rem;
-                text-align: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            .company-name {
-                font-size: 2rem;
-            }
-
-            .coming-soon-title {
-                font-size: 1.8rem;
-            }
-
-            .about-section {
-                padding: 30px 20px;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .logo {
-                width: 100px;
-            }
-        }
-
-        /* Subtle loading animation */
-        .loading-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #007bff, #28a745, #17a2b8);
-            animation: loading 3s ease-in-out;
-            z-index: 1000;
-        }
-
-        @keyframes loading {
-            0% { transform: scaleX(0); transform-origin: left; }
-            50% { transform: scaleX(1); transform-origin: left; }
-            51% { transform: scaleX(1); transform-origin: right; }
-            100% { transform: scaleX(0); transform-origin: right; }
-        }
+      .gradient {
+        background: linear-gradient(90deg, #0a3b88 0%, #4d8def 100%);
+      }
     </style>
-</head>
-<body>
-    <div class="loading-bar"></div>
-    
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/HasmigBaba/MobileTire/refs/heads/main/Alivio%20transparant%20Icon%20-%20Copy.png" alt="Alivio247 Logo" class="logo">
-            </div>
-            <h1 class="company-name">Alivio247</h1>
-            <p class="tagline">Smart Business Solutions</p>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <h2 class="coming-soon-title">Coming Soon</h2>
-            <p class="coming-soon-subtitle">We're putting the finishing touches on something extraordinary</p>
-
-            <!-- About Section -->
-            <section class="about-section">
-                <h3 class="section-title">What is Alivio247?</h3>
-                <p class="section-description">
-                    Alivio247 is a smart platform for all kinds of businesses. It handles your calls, reservations, and orders, making customer support easier and faster. By combining everything into one simple system, Alivio247 helps you track and manage all your customer requests in one place.
-                </p>
-
-                <!-- Features Grid -->
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📞</div>
-                        <h4 class="feature-title">Smart Call Handling</h4>
-                        <p class="feature-description">Automated call management that never misses a customer inquiry</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h4 class="feature-title">Easy Reservations</h4>
-                        <p class="feature-description">Streamlined booking system for seamless customer experience</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📋</div>
-                        <h4 class="feature-title">Order Management</h4>
-                        <p class="feature-description">Centralized system to track and manage all customer orders</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Call to Action -->
-            <section class="cta-section">
-                <h3 class="cta-title">Get Ready for the Future of Business Management</h3>
-                <p class="cta-description">We're working hard to bring you the most comprehensive business solution</p>
-                <div class="launch-indicator">
-                    <span class="pulse-dot"></span>
-                    <span>Launching Very Soon</span>
-                </div>
-            </section>
-        </main>
+    <style>
+      .rotating-text {
+        font-size: 2.5rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        border-right: 2px solid #000;
+        white-space: nowrap;
+        overflow: hidden;
+        min-height: 3rem;
+      }
+      @media (max-width: 768px) {
+        .rotating-text {
+          font-size: 2rem;
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      @keyframes blink {
+        0%, 50%, 100% { border-color: black; }
+        25%, 75% { border-color: transparent; }
+      }
+      .rotating-text {
+        animation: blink 1s step-end infinite;
+      }
+    </style>
+  </head>
+  <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+   <!--Nav-->
+<nav id="header" class="fixed w-full z-30 top-0 text-white">
+  <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+    <div class="pl-4 flex items-center">
+      <a class="toggleColour flex items-center no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+        <img id="brandlogo-white"
+             src="https://raw.githubusercontent.com/HasmigBaba/MobileTire/refs/heads/main/alivio%20whitee.png"
+             class="h-10 mr-2"
+             alt="Alivio White Logo">
+        <img id="brandlogo-color"
+             src="https://raw.githubusercontent.com/HasmigBaba/MobileTire/refs/heads/main/Alivio%20colorrr.png"
+             class="h-10 mr-2"
+             style="display:none;"
+             alt="Alivio Color Logo">
+        <span id="brandname">Alivio 24/7</span>
+      </a>
     </div>
+
+    <div class="block lg:hidden pr-4">
+      <button id="nav-toggle"
+        class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="nav-content"
+      class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 lg:bg-transparent text-black p-4 lg:p-0 z-20">
+      <ul class="list-reset lg:flex justify-end flex-1 items-center">
+        <li class="mr-3">
+         <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="https://www.alivio247.com">Home</a>
+        </li>
+        <li class="mr-3">
+          <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4" href="#">Industries</a>
+        </li>
+        <li class="mr-3">
+          <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4" href="#">Pricing</a>
+        </li>
+      </ul>
+      <button id="navAction"
+        onclick="window.location.href='https://dashboard.alivio247.com/'"
+        class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+    Dashboard
+</button>
+
+    </div>
+  </div>
+  <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+</nav>
+
+<!--Hero Section-->
+<div class="pt-24">
+  <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+      <p class="uppercase tracking-loose w-full">Don’t make them wait in voicemail</p>
+      <h1 class="my-4 text-5xl font-bold leading-tight">AI voice agents for</h1>
+      <p id="rotatingText" class="rotating-text"></p>
+      <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+        Start Now
+      </button>
+    </div>
+    <div class="w-full md:w-3/5 py-6 text-center">
+      <img class="w-full md:w-4/5 z-50" src="hero.png" />
+    </div>
+  </div>
+</div>
+
+<!-- Continue the rest of your HTML as-is -->
+<!-- Sections, SVGs, Pricing, Testimonials, Footer, Scripts... -->
+
+<script>
+  // JS code for scroll effects, nav toggle, rotating text
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+  var navaction = document.getElementById("navAction");
+  var brandname = document.getElementById("brandname");
+  var toToggle = document.querySelectorAll(".toggleColour");
+
+  var brandlogoWhite = document.getElementById("brandlogo-white");
+  var brandlogoColor = document.getElementById("brandlogo-color");
+
+  document.addEventListener("scroll", function () {
+    scrollpos = window.scrollY;
+
+    if (scrollpos > 10) {
+      header.classList.add("bg-white");
+      navaction.classList.remove("bg-white");
+      navaction.classList.add("gradient");
+      navaction.classList.remove("text-gray-800");
+      navaction.classList.add("text-white");
+
+      for (var i = 0; i < toToggle.length; i++) {
+        toToggle[i].classList.add("text-gray-800");
+        toToggle[i].classList.remove("text-white");
+      }
+
+      header.classList.add("shadow");
+      navcontent.classList.remove("bg-gray-100");
+      navcontent.classList.add("bg-white");
+
+      brandlogoWhite.style.display = "none";
+      brandlogoColor.style.display = "inline-block";
+    } else {
+      header.classList.remove("bg-white");
+      navaction.classList.remove("gradient");
+      navaction.classList.add("bg-white");
+      navaction.classList.remove("text-white");
+      navaction.classList.add("text-gray-800");
+
+      for (var i = 0; i < toToggle.length; i++) {
+        toToggle[i].classList.add("text-white");
+        toToggle[i].classList.remove("text-gray-800");
+      }
+
+      header.classList.remove("shadow");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-gray-100");
+
+      brandlogoWhite.style.display = "inline-block";
+      brandlogoColor.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+  var navMenuDiv = document.getElementById("nav-content");
+  var navMenu = document.getElementById("nav-toggle");
+
+  document.onclick = check;
+  function check(e) {
+    var target = (e && e.target) || (event && event.srcElement);
+    if (!checkParent(target, navMenuDiv)) {
+      if (checkParent(target, navMenu)) {
+        if (navMenuDiv.classList.contains("hidden")) {
+          navMenuDiv.classList.remove("hidden");
+        } else {
+          navMenuDiv.classList.add("hidden");
+        }
+      } else {
+        navMenuDiv.classList.add("hidden");
+      }
+    }
+  }
+  function checkParent(t, elm) {
+    while (t.parentNode) {
+      if (t == elm) {
+        return true;
+      }
+      t = t.parentNode;
+    }
+    return false;
+  }
+</script>
+
+<script>
+  const words = [
+    "Healthcare",
+    "Real Estate",
+    "Education",
+    "Insurance",
+    "Travel",
+    "Fitness Centers",
+    "Car Dealerships",
+    "Restaurants",
+    "Salons",
+    "Supermarkets",
+    "Event planners",
+    "Cleaning services"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  const typingSpeed = 100;
+  const pauseBetweenWords = 1500;
+  const rotatingText = document.getElementById("rotatingText");
+
+  function typeWord() {
+    if (charIndex < words[wordIndex].length) {
+      rotatingText.textContent = words[wordIndex].substring(0, charIndex + 1);
+      charIndex++;
+      setTimeout(typeWord, typingSpeed);
+    } else {
+      setTimeout(eraseWord, pauseBetweenWords);
+    }
+  }
+
+  function eraseWord() {
+    if (charIndex > 0) {
+      rotatingText.textContent = words[wordIndex].substring(0, charIndex - 1) + '\u00A0';
+      charIndex--;
+      setTimeout(eraseWord, typingSpeed / 2);
+    } else {
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(typeWord, typingSpeed);
+    }
+  }
+
+  typeWord();
+</script>
 </body>
 </html>
