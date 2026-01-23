@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-     Alivio24/7
+     Alivio 24/7
     </title>
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
