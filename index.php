@@ -8,9 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>
-     Alivio 24/7
-    </title>
+    <title>Alivio 24/7</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/megvargian/alivio247/refs/heads/main/Alivio%20colorrr.png" type="image/png">
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
