@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alivio247 Packages</title>
+<?php
+include 'header.php';
+?>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +15,7 @@
 
     .container { max-width: 1200px; margin: 0 auto; }
 
-    .header { text-align: center; margin-bottom: 40px; }
+    .header { text-align: center; margin-bottom: 40px; margin-top: 60px; }
     .header-logo {
       max-height: 180px;
       margin-bottom: 1px;
@@ -103,7 +100,7 @@
     }
 
     .essential .package-icon { background: #27ae60; }
-    .professional .package-icon { 
+    .professional .package-icon {
       background: rgba(52, 152, 219, 0.5) !important; /* 50% opacity icon background */
       box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2); /* 50% opacity shadow */
     }
@@ -299,11 +296,11 @@
     .package-cta:active { transform: translateY(1px); }
 
     .essential .package-cta { background: #27ae60; }
-    .professional .package-cta { 
+    .professional .package-cta {
       background: rgba(52, 152, 219, 0.5) !important; /* 50% opacity blue */
       box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2); /* 50% opacity shadow */
     }
-    .professional .package-cta:hover { 
+    .professional .package-cta:hover {
       box-shadow: 0 10px 25px rgba(52, 152, 219, 0.25); /* 50% opacity shadow */
     }
     .premium .package-cta { background: #660066; }

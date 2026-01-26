@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css">
 </head>
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
 
 <body class="leading-normal tracking-normal text-black gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
@@ -54,10 +57,7 @@
                     </li> -->
                     <!-- <li class="mr-3">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
-                            href="#">Industries</a>
-                    </li> -->
-                    <li class="mr-3 dropdown">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 cursor-pointer"
+                            href="#">Industries</a> nav-link <?php echo ($current_page == 'inbound.php') ? 'active' : ''; ?>"
                             onclick="toggleMobileDropdown(event)">
                             Pricing
                             <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,12 +70,15 @@
                         </div>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 nav-link <?php echo ($current_page == 'about-us.php') ? 'active' : ''; ?>"
                             href="about-us.php">About Us</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 nav-link <?php echo ($current_page == 'contact-us.php') ? 'active' : ''; ?>"
                             href="contact-us.php">Contact Us</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 nav-link <?php echo ($current_page == 'terms-and-conditions.php') ? 'active' : ''; ?>
                     </li>
                     <li class="mr-3">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
