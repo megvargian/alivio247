@@ -166,6 +166,7 @@ include 'header.php';
       background: #ffffff;
       color: #333;
       line-height: 1.6;
+      padding: 40px 0px;
   }
 
   .container {
