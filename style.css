@@ -546,9 +546,6 @@
   }
 
   @media (max-width: 768px) {
-      body {
-          padding: 40px 15px;
-      }
 
       .header h1 {
           font-size: 2rem;
@@ -570,5 +567,9 @@
 
       .flexibility-option p {
           font-size: 0.95rem;
+      }
+      .fill-current{
+        fill: #fff;
+        stroke: #fff;
       }
   }
