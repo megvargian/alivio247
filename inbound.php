@@ -177,6 +177,7 @@ include 'header.php';
   .header {
       text-align: center;
       margin-bottom: 40px;
+      padding-top: 4rem;
   }
 
   .header-logo {
