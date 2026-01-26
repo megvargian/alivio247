@@ -56,9 +56,30 @@
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
                             href="#">Industries</a>
                     </li>
+                    <li class="mr-3 dropdown">
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 cursor-pointer"
+                            onclick="toggleMobileDropdown(event)">
+                            Pricing
+                            <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="inbound.php">Inbound</a>
+                            <a href="#" class="text-gray-400 cursor-not-allowed">Outbound (Coming Soon)</a>
+                        </div>
+                    </li>
                     <li class="mr-3">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
-                            href="#">Pricing</a>
+                            href="about-us.php">About Us</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
+                            href="contact-us.php">Contact Us</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
+                            href="terms-and-conditions.php">Terms</a>
                     </li>
                 </ul>
                 <button id="navAction" onclick="window.location.href='https://dashboard.alivio247.com/'"
@@ -70,4 +91,15 @@
         </div>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
     </nav>
+
+    <script>
+    // Toggle dropdown on mobile
+    function toggleMobileDropdown(event) {
+        if (window.innerWidth < 1024) {
+            event.preventDefault();
+            const dropdown = event.target.closest('.dropdown');
+            dropdown.classList.toggle('mobile-open');
+        }
+    }
+    </script>
 <?php
