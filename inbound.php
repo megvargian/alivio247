@@ -3,8 +3,6 @@ include 'header.php';
 ?>
 <div class="container">
     <div class="header">
-        <img src="https://raw.githubusercontent.com/HasmigBaba/MobileTire/refs/heads/main/Alivio%20transparant%20-%20Copy%20(2).png"
-            alt="Alivio247 Logo" class="header-logo">
         <h1>Choose Your Alivio247 Package</h1>
         <p>Professional call handling solutions designed to grow with your business</p>
     </div>
@@ -168,7 +166,6 @@ include 'header.php';
       background: #ffffff;
       color: #333;
       line-height: 1.6;
-      padding: 60px 20px;
   }
 
   .container {
