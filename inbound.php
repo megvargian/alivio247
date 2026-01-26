@@ -17,7 +17,7 @@ include 'header.php';
                 <div class="pricing-container">
                     <div class="monthly-price">$199<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $1,999/year</div>
+                    <div class="yearly-option">or $1,999/year <span style="color: #27ae60; font-weight: 700;">• 2 Months Free</span></div>
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ include 'header.php';
                 <div class="pricing-container">
                     <div class="monthly-price">$349<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $3,499/year</div>
+                    <div class="yearly-option">or $3,499/year <span style="color: #27ae60; font-weight: 700;">• 2 Months Free</span></div>
                 </div>
             </div>
 
@@ -122,7 +122,7 @@ include 'header.php';
                 <div class="pricing-container">
                     <div class="monthly-price">$449<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $4,499/year</div>
+                    <div class="yearly-option">or $4,499/year <span style="color: #27ae60; font-weight: 700;">• 2 Months Free</span></div>
                 </div>
             </div>
 
