@@ -84,7 +84,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </li>
                     <li class="mr-3">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == 'terms-and-conditions.php') ? 'active' : ''; ?>"
-                            href="terms-and-conditions.php">Terms</a>
+                            href="terms-and-conditions.php">Terms & Conditions</a>
                     </li>
                 </ul>
                 <button id="navAction" onclick="window.location.href='https://dashboard.alivio247.com/'"
