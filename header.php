@@ -24,7 +24,7 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <a class="toggleColour flex items-center no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                    href="#">
+                    href="/">
                     <img id="brandlogo-white"
                         src="https://raw.githubusercontent.com/HasmigBaba/MobileTire/refs/heads/main/alivio%20whitee.png"
                         class="h-10 mr-2" alt="Alivio White Logo">
@@ -48,14 +48,14 @@
             <div id="nav-content"
                 class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 lg:bg-transparent text-black p-4 lg:p-0 z-20">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
-                    <li class="mr-3">
+                    <!-- <li class="mr-3">
                         <a class="inline-block py-2 px-4 text-black font-bold no-underline"
                             href="https://www.alivio247.com">Home</a>
-                    </li>
-                    <li class="mr-3">
+                    </li> -->
+                    <!-- <li class="mr-3">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4"
                             href="#">Industries</a>
-                    </li>
+                    </li> -->
                     <li class="mr-3 dropdown">
                         <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 cursor-pointer"
                             onclick="toggleMobileDropdown(event)">
