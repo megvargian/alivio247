@@ -158,6 +158,5 @@ include 'header.php';
 
     typeWord();
     </script>
-</body>
-
-</html>
+<?php
+include 'footer.php';
