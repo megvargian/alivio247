@@ -62,6 +62,16 @@ $test_configs = [
         'username' => 'support@alivio247.com@secureserver.net',
         'password' => '{TC$zr88Q2$*',
         'description' => 'Some GoDaddy setups require domain suffix'
+    ],
+
+    // Test 7: Gmail SMTP (Alternative solution)
+    [
+        'name' => 'Gmail SMTP (alivio247alivio@gmail.com)',
+        'smtp_host' => 'smtp.gmail.com',
+        'smtp_port' => 587,
+        'username' => 'alivio247alivio@gmail.com',
+        'password' => 'jbkq jsyx yywt wclr', // From Gmail App Password generation
+        'description' => 'Gmail SMTP as backup solution'
     ]
 ];
 

@@ -32,15 +32,15 @@ if (!empty($errors)) {
     exit;
 }
 
-// === SMTP CONFIGURATION FOR GODADDY ===
-// GoDaddy SMTP settings for alivio247.com domain
+// === SMTP CONFIGURATION - GMAIL (RELIABLE) ===
+// Using Gmail SMTP for reliable email delivery
 $smtpConfig = [
-    'host' => 'smtpout.secureserver.net',  // GoDaddy's SMTP server
-    'port' => 587,  // GoDaddy uses 587 for TLS or 465 for SSL
+    'host' => 'smtp.gmail.com',  // Gmail SMTP server
+    'port' => 587,  // Gmail uses 587 for TLS
     'encryption' => 'tls',  // Use TLS encryption
-    'username' => 'support@alivio247.com',  // Your GoDaddy email account (create this if needed)
-    'password' => '{TC$zr88Q2$*',  // Password for support@alivio247.com
-    'from_email' => 'support@alivio247.com',
+    'username' => 'alivio247alivio@gmail.com',  // Your Gmail account
+    'password' => 'PASTE_YOUR_16_CHAR_APP_PASSWORD_HERE',  // Gmail App Password (replace this!)
+    'from_email' => 'alivio247alivio@gmail.com',  // Send from Gmail
     'from_name' => 'ALIVIO247 Contact Form'
 ];
 
