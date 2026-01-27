@@ -10,7 +10,7 @@ $test_configs = [
         'smtp_host' => 'smtpout.secureserver.net',
         'smtp_port' => 587,
         'username' => 'support@alivio247.com',
-        'password' => 'Rd8s2*muRd8s2*mu', // UPDATE THIS
+        'password' => '{TC$zr88Q2$*', // UPDATE THIS
         'description' => 'Current configuration'
     ],
 
@@ -20,7 +20,7 @@ $test_configs = [
         'smtp_host' => 'smtpout.secureserver.net',
         'smtp_port' => 465,
         'username' => 'support@alivio247.com',
-        'password' => 'Rd8s2*muRd8s2*mu', // UPDATE THIS
+        'password' => '{TC$zr88Q2$*', // UPDATE THIS
         'description' => 'Using SSL port 465'
     ],
 
@@ -40,7 +40,7 @@ $test_configs = [
         'smtp_host' => 'relay-hosting.secureserver.net',
         'smtp_port' => 25,
         'username' => 'support@alivio247.com',
-        'password' => 'Rd8s2*muRd8s2*mu', // UPDATE THIS
+        'password' => '{TC$zr88Q2$*', // UPDATE THIS
         'description' => 'Alternative GoDaddy SMTP server'
     ]
 ];
