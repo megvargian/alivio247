@@ -21,7 +21,6 @@
 <?php
 // Get the current page filename
 $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-echo $current_page;
 ?>
 
 <body class="leading-normal tracking-normal text-black gradient" style="font-family: 'Source Sans Pro', sans-serif;">
