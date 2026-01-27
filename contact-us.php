@@ -135,14 +135,14 @@ include 'header.php';
     // Auto-hide success/error messages after 5 seconds
     window.addEventListener('load', function() {
         const alerts = document.querySelectorAll('[class*="bg-green-100"], [class*="bg-red-100"]');
-        alerts.forEach(function(alert) {
-            setTimeout(function() {
-                alert.style.opacity = '0';
-                setTimeout(function() {
-                    alert.remove();
-                }, 300);
-            }, 5000);
-        });
+        // alerts.forEach(function(alert) {
+        //     setTimeout(function() {
+        //         alert.style.opacity = '0';
+        //         setTimeout(function() {
+        //             alert.remove();
+        //         }, 300);
+        //     }, 5000);
+        // });
     });
     </script>
 
