@@ -32,15 +32,15 @@ if (!empty($errors)) {
     exit;
 }
 
-// === SMTP CONFIGURATION FOR CPANEL ===
-// UPDATE THESE SETTINGS WITH YOUR CPANEL EMAIL DETAILS
+// === SMTP CONFIGURATION FOR GODADDY ===
+// GoDaddy SMTP settings for alivio247.com domain
 $smtpConfig = [
-    'host' => 'mail.alivio247.com',  // Change to your domain's mail server (usually mail.yourdomain.com)
-    'port' => 587,  // Usually 587 for TLS or 465 for SSL
-    'encryption' => 'tls',  // 'tls' or 'ssl'
-    'username' => 'info@alivio247.com',  // Your cPanel email account
-    'password' => 'j*z}(n~.}mU4bIKR',  // Password for info@alivio247.com
-    'from_email' => 'info@alivio247.com',
+    'host' => 'smtpout.secureserver.net',  // GoDaddy's SMTP server
+    'port' => 587,  // GoDaddy uses 587 for TLS or 465 for SSL
+    'encryption' => 'tls',  // Use TLS encryption
+    'username' => 'support@alivio247.com',  // Your GoDaddy email account (create this if needed)
+    'password' => 'Rd8s2*muRd8s2*mu',  // Password for support@alivio247.com
+    'from_email' => 'support@alivio247.com',
     'from_name' => 'ALIVIO247 Contact Form'
 ];
 

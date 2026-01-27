@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALIVIO247 - GoDaddy Email Setup Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        .step { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .config { background: #1f2937; color: #f9fafb; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0; overflow-x: auto; }
+        .success { background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .godaddy { background: #00a4a6; color: white; padding: 15px; border-radius: 5px; text-align: center; margin: 20px 0; }
+        h1 { color: #1e40af; }
+        h2 { color: #374151; }
+        .highlight { background: #fbbf24; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="godaddy">
+        <h1>📧 ALIVIO247 GoDaddy Email Setup</h1>
+        <p>Complete setup guide for GoDaddy hosted email</p>
+    </div>
+
+    <div class="step">
+        <h2>✅ Step 1: Create/Verify Email Account</h2>
+        <p>Since you already have <strong>info@alivio247.com</strong> set up, you can either:</p>
+        <h3>Option A: Use existing info@alivio247.com</h3>
+        <p>Keep using your current email account with the password you already have.</p>
+
+        <h3>Option B: Create support@alivio247.com (Recommended)</h3>
+        <ol>
+            <li>Log into your GoDaddy account</li>
+            <li>Go to <strong>"My Products"</strong></li>
+            <li>Find your domain and click <strong>"Email"</strong></li>
+            <li>Create a new email: <span class="highlight">support@alivio247.com</span></li>
+            <li>Set a strong password and note it down</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>⚙️ Step 2: GoDaddy SMTP Settings (Already Updated)</h2>
+        <p>I've already updated your contact-handler-smtp.php with GoDaddy's SMTP settings:</p>
+        <div class="config">
+$smtpConfig = [
+    'host' => 'smtpout.secureserver.net',    // GoDaddy's SMTP server
+    'port' => 587,                           // GoDaddy's TLS port
+    'encryption' => 'tls',                   // TLS encryption
+    'username' => 'support@alivio247.com',   // Your email account
+    'password' => 'YOUR_SUPPORT_EMAIL_PASSWORD', // Update this!
+    'from_email' => 'support@alivio247.com',
+    'from_name' => 'ALIVIO247 Contact Form'
+];
+        </div>
+    </div>
+
+    <div class="warning">
+        <h3>🔑 Step 3: Update the Password</h3>
+        <p>You need to update <strong>ONE LINE</strong> in the contact-handler-smtp.php file:</p>
+        <div class="config">
+'password' => 'YOUR_ACTUAL_EMAIL_PASSWORD',  // Replace with real password
+        </div>
+        <p><strong>If using support@alivio247.com:</strong> Use the password you set when creating it</p>
+        <p><strong>If using info@alivio247.com:</strong> Use your existing password and change the username/from_email to info@alivio247.com</p>
+    </div>
+
+    <div class="step">
+        <h2>🔄 Alternative: Keep Using info@alivio247.com</h2>
+        <p>If you prefer to use your existing email, change these lines:</p>
+        <div class="config">
+'username' => 'info@alivio247.com',      // Instead of support@
+'from_email' => 'info@alivio247.com',    // Instead of support@
+'password' => 'j*z}(n~.}mU4bIKR',       // Your existing password
+        </div>
+    </div>
+
+    <div class="success">
+        <h3>✅ GoDaddy Email Advantages:</h3>
+        <ul>
+            <li><strong>Reliable Delivery:</strong> GoDaddy has excellent email delivery rates</li>
+            <li><strong>Professional:</strong> Emails come from your domain (not Gmail)</li>
+            <li><strong>Integrated:</strong> Works seamlessly with your hosting</li>
+            <li><strong>No Extra Setup:</strong> No need for app passwords or 2FA</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>🧪 Step 4: Test Your Setup</h2>
+        <ol>
+            <li>Update the password in contact-handler-smtp.php</li>
+            <li>Upload the file to your website</li>
+            <li>Visit your contact form</li>
+            <li>Submit a test with your own email</li>
+            <li>Check for emails in both inboxes</li>
+        </ol>
+    </div>
+
+    <div class="warning">
+        <h3>🔍 GoDaddy Email Settings Reference:</h3>
+        <ul>
+            <li><strong>SMTP Server:</strong> smtpout.secureserver.net</li>
+            <li><strong>Port:</strong> 587 (TLS) or 465 (SSL)</li>
+            <li><strong>Security:</strong> TLS or SSL/TLS</li>
+            <li><strong>Authentication:</strong> Required</li>
+            <li><strong>Username:</strong> Your full email address</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>📞 Expected Email Flow:</h2>
+        <ol>
+            <li><strong>Customer submits form</strong> → Gets "Thank You" email</li>
+            <li><strong>support@alivio247.com</strong> → Gets notification with customer details</li>
+            <li><strong>alivio247alivio@gmail.com</strong> → Gets same notification</li>
+            <li><strong>All emails sent from:</strong> support@alivio247.com (professional!)</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <h3>✅ Why GoDaddy Email is Better:</h3>
+        <p>Using <strong>support@alivio247.com</strong> instead of Gmail makes your business look more professional and trustworthy. Customers see emails coming from your official domain, not a generic Gmail account.</p>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px;">
+        <a href="contact-us.php" style="background: #00a4a6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            🔙 Test Contact Form Now
+        </a>
+    </p>
+</body>
+</html>
