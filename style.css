@@ -91,6 +91,12 @@
   transform: scale(1.05);
 }
 
+#nav-content ul li a.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
 /* Remove hover effects from dropdown items */
 .dropdown-content a:hover {
   background-color: #f3f4f6;
