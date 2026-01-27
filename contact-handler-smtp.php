@@ -39,7 +39,7 @@ $smtpConfig = [
     'port' => 587,  // GoDaddy uses 587 for TLS or 465 for SSL
     'encryption' => 'tls',  // Use TLS encryption
     'username' => 'support@alivio247.com',  // Your GoDaddy email account (create this if needed)
-    'password' => 'Rd8s2*muRd8s2*mu',  // Password for support@alivio247.com
+    'password' => '{TC$zr88Q2$*',  // Password for support@alivio247.com
     'from_email' => 'support@alivio247.com',
     'from_name' => 'ALIVIO247 Contact Form'
 ];

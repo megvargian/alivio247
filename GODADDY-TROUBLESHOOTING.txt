@@ -1,0 +1,61 @@
+📧 GoDaddy Email Account Verification Checklist
+==============================================
+
+❌ AUTHENTICATION REJECTED (535 Error)
+This means your username/password credentials are incorrect or the email account isn't properly configured.
+
+🔍 STEP 1: VERIFY EMAIL ACCOUNT EXISTS
+-------------------------------------
+1. Log into your GoDaddy account
+2. Go to "My Products" → "Email & Office"
+3. Find your alivio247.com domain
+4. Check if these email accounts exist:
+   - support@alivio247.com
+   - info@alivio247.com
+
+🔑 STEP 2: CHECK/RESET PASSWORD
+------------------------------
+1. In GoDaddy Email & Office dashboard
+2. Click on the email account (support@alivio247.com)
+3. Look for "Settings" or "Account Settings"
+4. Find "Change Password" or "Reset Password"
+5. Set a NEW password and remember it
+
+⚙️ STEP 3: VERIFY SMTP ACCESS
+----------------------------
+1. In email account settings, look for:
+   - "SMTP Settings" or "Outgoing Mail Settings"
+   - "IMAP/SMTP Access" (make sure it's ENABLED)
+   - "Less Secure Apps" (enable if option exists)
+   - "App Passwords" (may need to generate one)
+
+🧪 STEP 4: TEST CREDENTIALS
+--------------------------
+1. Update test-credentials.php with the correct password
+2. Visit: http://yourdomain.com/test-credentials.php
+3. Look for GREEN (✅) results
+
+📝 STEP 5: UPDATE CONTACT FORM
+-----------------------------
+Once you find working credentials, update:
+- contact-handler-smtp.php
+- Line ~42: 'password' => 'YOUR_CORRECT_PASSWORD'
+
+🔧 COMMON GODADDY ISSUES:
+------------------------
+- Email accounts must be created in GoDaddy first
+- Password might be different from login password
+- May need "App Password" instead of regular password
+- SMTP might be disabled by default
+- Some accounts require 2FA setup
+
+💡 QUICK FIX ATTEMPT:
+-------------------
+Try these common GoDaddy passwords patterns:
+- Same as your GoDaddy account password
+- Same as webmail login password
+- A password you set specifically for this email
+- An "App Password" generated in settings
+
+If nothing works, contact GoDaddy support and ask:
+"I need to enable SMTP access for support@alivio247.com to send emails from my website"
