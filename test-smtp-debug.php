@@ -6,7 +6,7 @@ $config = [
     'smtp_host' => 'smtpout.secureserver.net',
     'smtp_port' => 587,
     'username' => 'support@alivio247.com',
-    'password' => 'your_actual_password_here', // Replace with your actual password
+    'password' => 'Rd8s2*muRd8s2*mu', // Replace with your actual password
     'from_email' => 'support@alivio247.com',
     'from_name' => 'ALIVIO247 Support'
 ];
