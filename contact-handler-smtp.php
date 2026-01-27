@@ -48,19 +48,142 @@ $supportEmail1 = 'support@alivio247.com';
 $supportEmail2 = 'alivio247alivio@gmail.com';
 $currentDateTime = date('F j, Y \a\t g:i A');
 
-// === SIMPLIFIED SMTP EMAIL SENDING (using PHP's built-in functions) ===
+// === REAL SMTP EMAIL SENDING (NO mail() function) ===
 function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
-    // Use PHP's mail function with custom headers for SMTP-like behavior
-    $headers = "From: {$config['from_name']} <{$config['from_email']}>\r\n";
-    $headers .= "Reply-To: " . ($replyTo ?: $config['from_email']) . "\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+    $log = [];
 
-    // Set additional mail parameters for cPanel
-    $parameters = "-f" . $config['from_email'];
+    // Connect to SMTP server
+    $socket = @fsockopen($config['host'], $config['port'], $errno, $errstr, 30);
+    if (!$socket) {
+        return ['success' => false, 'error' => "Cannot connect to {$config['host']}:{$config['port']} - $errstr ($errno)"];
+    }
 
-    return mail($to, $subject, $body, $headers, $parameters);
+    $log[] = "Connected to {$config['host']}:{$config['port']}";
+
+    // Read initial response
+    $response = fgets($socket, 256);
+    $log[] = "Initial: " . trim($response);
+
+    if (substr($response, 0, 3) != '220') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'Invalid initial response: ' . $response, 'log' => $log];
+    }
+
+    // EHLO command
+    fputs($socket, "EHLO " . ($_SERVER['HTTP_HOST'] ?? 'localhost') . "\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "EHLO: " . trim($response);
+
+    // STARTTLS if using TLS
+    if ($config['encryption'] === 'tls') {
+        fputs($socket, "STARTTLS\r\n");
+        $response = fgets($socket, 256);
+        $log[] = "STARTTLS: " . trim($response);
+
+        if (substr($response, 0, 3) == '220') {
+            // Enable crypto
+            if (!stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+                fclose($socket);
+                return ['success' => false, 'error' => 'Failed to enable TLS encryption', 'log' => $log];
+            }
+
+            // EHLO again after TLS
+            fputs($socket, "EHLO " . ($_SERVER['HTTP_HOST'] ?? 'localhost') . "\r\n");
+            $response = fgets($socket, 256);
+            $log[] = "EHLO after TLS: " . trim($response);
+        }
+    }
+
+    // AUTH LOGIN
+    fputs($socket, "AUTH LOGIN\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "AUTH LOGIN: " . trim($response);
+
+    if (substr($response, 0, 3) != '334') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'AUTH LOGIN failed: ' . $response, 'log' => $log];
+    }
+
+    // Send username
+    fputs($socket, base64_encode($config['username']) . "\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "Username: " . trim($response);
+
+    if (substr($response, 0, 3) != '334') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'Username rejected: ' . $response, 'log' => $log];
+    }
+
+    // Send password
+    fputs($socket, base64_encode($config['password']) . "\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "Password: " . trim($response);
+
+    if (substr($response, 0, 3) != '235') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'Authentication failed: ' . $response, 'log' => $log];
+    }
+
+    // MAIL FROM
+    fputs($socket, "MAIL FROM: <{$config['from_email']}>\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "MAIL FROM: " . trim($response);
+
+    if (substr($response, 0, 3) != '250') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'MAIL FROM rejected: ' . $response, 'log' => $log];
+    }
+
+    // RCPT TO
+    fputs($socket, "RCPT TO: <$to>\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "RCPT TO: " . trim($response);
+
+    if (substr($response, 0, 3) != '250') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'RCPT TO rejected: ' . $response, 'log' => $log];
+    }
+
+    // DATA
+    fputs($socket, "DATA\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "DATA: " . trim($response);
+
+    if (substr($response, 0, 3) != '354') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'DATA command rejected: ' . $response, 'log' => $log];
+    }
+
+    // Email headers and body
+    $email_data = "";
+    $email_data .= "From: {$config['from_name']} <{$config['from_email']}>\r\n";
+    $email_data .= "To: $to\r\n";
+    $email_data .= "Reply-To: " . ($replyTo ?: $config['from_email']) . "\r\n";
+    $email_data .= "Subject: $subject\r\n";
+    $email_data .= "MIME-Version: 1.0\r\n";
+    $email_data .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $email_data .= "X-Mailer: ALIVIO247 SMTP Client\r\n";
+    $email_data .= "\r\n";
+    $email_data .= $body;
+    $email_data .= "\r\n.\r\n";
+
+    fputs($socket, $email_data);
+    $response = fgets($socket, 256);
+    $log[] = "Email sent: " . trim($response);
+
+    if (substr($response, 0, 3) != '250') {
+        fclose($socket);
+        return ['success' => false, 'error' => 'Email sending failed: ' . $response, 'log' => $log];
+    }
+
+    // QUIT
+    fputs($socket, "QUIT\r\n");
+    $response = fgets($socket, 256);
+    $log[] = "QUIT: " . trim($response);
+
+    fclose($socket);
+
+    return ['success' => true, 'error' => '', 'log' => $log];
 }
 
 // === EMAIL TEMPLATES ===
@@ -174,35 +297,42 @@ $supportMessage = "
 // === SEND EMAILS ===
 $emailsSent = 0;
 $emailErrors = [];
+$emailLogs = [];
 
 // 1. Send thank you email to customer
 $result1 = sendSMTPEmail($email, $customerSubject, $customerMessage, $smtpConfig);
-if ($result1) {
+if ($result1['success']) {
     $emailsSent++;
+    $emailLogs[] = "✅ Customer email sent to $email";
 } else {
-    $emailErrors[] = "Failed to send thank you email to customer ($email)";
+    $emailErrors[] = "❌ Customer email failed: " . $result1['error'];
+    $emailLogs[] = "❌ Customer email failed to $email: " . $result1['error'];
 }
 
 // 2. Send notification to support email 1
 $result2 = sendSMTPEmail($supportEmail1, $supportSubject, $supportMessage, $smtpConfig, $email);
-if ($result2) {
+if ($result2['success']) {
     $emailsSent++;
+    $emailLogs[] = "✅ Support email sent to $supportEmail1";
 } else {
-    $emailErrors[] = "Failed to send notification to $supportEmail1";
+    $emailErrors[] = "❌ Support email 1 failed: " . $result2['error'];
+    $emailLogs[] = "❌ Support email failed to $supportEmail1: " . $result2['error'];
 }
 
 // 3. Send notification to support email 2
 $result3 = sendSMTPEmail($supportEmail2, $supportSubject, $supportMessage, $smtpConfig, $email);
-if ($result3) {
+if ($result3['success']) {
     $emailsSent++;
+    $emailLogs[] = "✅ Support email sent to $supportEmail2";
 } else {
-    $emailErrors[] = "Failed to send notification to $supportEmail2";
+    $emailErrors[] = "❌ Support email 2 failed: " . $result3['error'];
+    $emailLogs[] = "❌ Support email failed to $supportEmail2: " . $result3['error'];
 }
 
 // === HANDLE RESULTS ===
 if ($emailsSent > 0) {
     // At least one email was sent successfully
-    $successMsg = urlencode("Thank you for your message! We'll get back to you soon. ($emailsSent emails sent)");
+    $successMsg = urlencode("Thank you for your message! We'll get back to you soon.");
     header("Location: contact-us.php?success=$successMsg");
 } else {
     // No emails were sent - create backup file and show error
@@ -220,227 +350,6 @@ if ($emailsSent > 0) {
     file_put_contents($backupFile, json_encode($backupData, JSON_PRETTY_PRINT));
 
     $errorMsg = urlencode("Sorry, there was an error sending your message. Your message has been saved and we will respond manually. Error details: " . implode(', ', $emailErrors));
-    header("Location: contact-us.php?error=$errorMsg");
-}
-exit;
-?>
-    'port' => 587,
-    'encryption' => 'tls',
-    'username' => 'alivio247alivio@gmail.com',
-    'password' => 'YOUR_GMAIL_APP_PASSWORD', // You need to set this up
-    'from_email' => 'alivio247alivio@gmail.com',
-    'from_name' => 'ALIVIO247 Contact Form'
-];
-
-// === SIMPLE SMTP FUNCTION ===
-function sendWithSMTP($to, $subject, $body, $config, $replyTo = '') {
-    $headers = [
-        'From: ' . $config['from_name'] . ' <' . $config['from_email'] . '>',
-        'Reply-To: ' . ($replyTo ?: $config['from_email']),
-        'MIME-Version: 1.0',
-        'Content-Type: text/html; charset=UTF-8'
-    ];
-
-    // Basic SMTP using fsockopen (fallback method)
-    $socket = fsockopen($config['host'], $config['port'], $errno, $errstr, 30);
-    if (!$socket) {
-        return false;
-    }
-
-    // Simple SMTP conversation
-    $commands = [
-        "EHLO " . $_SERVER['HTTP_HOST'],
-        "STARTTLS",
-        "AUTH LOGIN",
-        base64_encode($config['username']),
-        base64_encode($config['password']),
-        "MAIL FROM: <" . $config['from_email'] . ">",
-        "RCPT TO: <$to>",
-        "DATA",
-        "Subject: $subject\r\n" . implode("\r\n", $headers) . "\r\n\r\n$body\r\n.",
-        "QUIT"
-    ];
-
-    // This is a simplified version - for production, use PHPMailer
-    fclose($socket);
-    return true; // Placeholder - implement full SMTP if needed
-}
-
-// Email templates
-$customerMessage = "
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='UTF-8'>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #2563eb; color: white; padding: 20px; text-align: center; }
-        .content { padding: 30px; background-color: #f8f9fa; }
-        .highlight { background-color: #dbeafe; padding: 15px; border-left: 4px solid #2563eb; margin: 20px 0; }
-    </style>
-</head>
-<body>
-    <div class='container'>
-        <div class='header'>
-            <h1>Thank You for Contacting ALIVIO247</h1>
-        </div>
-        <div class='content'>
-            <h2>Hello $name,</h2>
-            <p>Thank you for reaching out to ALIVIO247! We have successfully received your message and our team will get back to you promptly.</p>
-
-            <div class='highlight'>
-                <h3>Your Message Details:</h3>
-                <p><strong>Name:</strong> $name</p>
-                <p><strong>Email:</strong> $email</p>
-                <p><strong>Phone:</strong> " . ($phone ?: 'Not provided') . "</p>
-                <p><strong>Submitted:</strong> $currentDateTime</p>
-            </div>
-
-            <p>Our team will review your inquiry within 2 business hours.</p>
-            <p>Best regards,<br><strong>The ALIVIO247 Team</strong></p>
-        </div>
-    </div>
-</body>
-</html>
-";
-
-$supportMessage = "
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='UTF-8'>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #dc2626; color: white; padding: 20px; text-align: center; }
-        .content { padding: 30px; background-color: #f8f9fa; }
-        .info-box { background-color: #fff; border: 1px solid #e5e7eb; padding: 20px; margin: 15px 0; border-radius: 5px; }
-    </style>
-</head>
-<body>
-    <div class='container'>
-        <div class='header'>
-            <h1>🔔 New Contact Form Submission</h1>
-        </div>
-        <div class='content'>
-            <div class='info-box'>
-                <h3>Customer Information</h3>
-                <p><strong>Name:</strong> $name</p>
-                <p><strong>Email:</strong> <a href='mailto:$email'>$email</a></p>
-                <p><strong>Phone:</strong> " . ($phone ?: 'Not provided') . "</p>
-                <p><strong>Submitted:</strong> $currentDateTime</p>
-            </div>
-
-            <div class='info-box'>
-                <h3>Message</h3>
-                <p>$message</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-";
-
-// Email headers for PHP mail()
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// Try sending emails
-$emailsSent = 0;
-$emailErrors = [];
-
-// Method 1: Try PHP mail() first
-$phpMailWorking = false;
-$customerHeaders = $headers . "From: $fromName <$supportEmail2>" . "\r\n" . "Reply-To: $supportEmail2" . "\r\n";
-$supportHeaders = $headers . "From: $fromName <$supportEmail2>" . "\r\n" . "Reply-To: $email" . "\r\n";
-
-// Test with a simple email first
-if (sendWithPhpMail($email, "Thank you for contacting ALIVIO247", $customerMessage, $customerHeaders)) {
-    $phpMailWorking = true;
-    $emailsSent++;
-
-    // If customer email worked, try support emails
-    if (sendWithPhpMail($supportEmail1, "New Contact Form Submission - ALIVIO247", $supportMessage, $supportHeaders)) {
-        $emailsSent++;
-    }
-
-    if (sendWithPhpMail($supportEmail2, "New Contact Form Submission - ALIVIO247", $supportMessage, $supportHeaders)) {
-        $emailsSent++;
-    }
-}
-
-// Method 2: If PHP mail() failed, show alternative solutions
-if (!$phpMailWorking) {
-    // Create a temporary results file to show the user
-    $resultsFile = 'contact-results.html';
-    $resultsContent = "
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Contact Form - Technical Issue</title>
-        <style>
-            body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
-            .error { background: #fef2f2; border: 1px solid #ef4444; color: #991b1b; padding: 20px; border-radius: 5px; margin: 20px 0; }
-            .info { background: #f0f9ff; border: 1px solid #2563eb; color: #1e40af; padding: 20px; border-radius: 5px; margin: 20px 0; }
-            .success { background: #f0fdf4; border: 1px solid #22c55e; color: #166534; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        </style>
-    </head>
-    <body>
-        <h1>🔧 Contact Form Technical Issue</h1>
-
-        <div class='error'>
-            <h3>❌ Email Delivery Issue</h3>
-            <p>Your message was received, but our server cannot send emails using the standard method.</p>
-            <p><strong>Your message details have been saved below.</strong></p>
-        </div>
-
-        <div class='info'>
-            <h3>📝 Your Message Details:</h3>
-            <p><strong>Name:</strong> $name</p>
-            <p><strong>Email:</strong> $email</p>
-            <p><strong>Phone:</strong> " . ($phone ?: 'Not provided') . "</p>
-            <p><strong>Message:</strong> $message</p>
-            <p><strong>Submitted:</strong> $currentDateTime</p>
-        </div>
-
-        <div class='success'>
-            <h3>✅ What we're doing:</h3>
-            <p>1. We've saved your message and will respond manually</p>
-            <p>2. You can also contact us directly at:</p>
-            <ul>
-                <li>Email: support@alivio247.com</li>
-                <li>Email: alivio247alivio@gmail.com</li>
-            </ul>
-        </div>
-
-        <div class='info'>
-            <h3>🔧 For the website administrator:</h3>
-            <p>The PHP mail() function is not working on this server. You need to:</p>
-            <ol>
-                <li>Check cPanel Email settings</li>
-                <li>Set up SMTP with Gmail or your hosting provider</li>
-                <li>Install PHPMailer for better email handling</li>
-                <li>Contact your hosting provider about mail() function</li>
-            </ol>
-        </div>
-
-        <p><a href='contact-us.php' style='background: #2563eb; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>← Back to Contact Form</a></p>
-    </body>
-    </html>
-    ";
-
-    file_put_contents($resultsFile, $resultsContent);
-    header("Location: $resultsFile");
-    exit;
-}
-
-// Redirect based on results
-if ($emailsSent > 0) {
-    $successMsg = urlencode("Thank you for your message! We'll get back to you soon.");
-    header("Location: contact-us.php?success=$successMsg");
-} else {
-    $errorMsg = urlencode("Sorry, there was an error sending your message. Please contact us directly.");
     header("Location: contact-us.php?error=$errorMsg");
 }
 exit;
