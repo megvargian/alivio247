@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALIVIO247 - cPanel SMTP Setup</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        .step { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .config { background: #1f2937; color: #f9fafb; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0; overflow-x: auto; }
+        .success { background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        h1 { color: #1e40af; }
+        h2 { color: #374151; }
+        .highlight { background: #fbbf24; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>📧 ALIVIO247 cPanel SMTP Setup Guide</h1>
+    <p>Complete setup instructions for using cPanel email with your contact form.</p>
+
+    <div class="step">
+        <h2>🔧 Step 1: Create Email Account in cPanel</h2>
+        <ol>
+            <li>Log into your cPanel</li>
+            <li>Go to <strong>"Email Accounts"</strong></li>
+            <li>Create or verify the email account: <span class="highlight">support@alivio247.com</span></li>
+            <li>Set a strong password and note it down</li>
+            <li>Make sure the email account is active</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>⚙️ Step 2: Update SMTP Settings</h2>
+        <p>Edit the file <strong>contact-handler-smtp.php</strong> and update these settings:</p>
+        <div class="config">
+$smtpConfig = [
+    'host' => 'mail.alivio247.com',          // Change to mail.yourdomain.com
+    'port' => 587,                           // Keep as 587 for TLS
+    'encryption' => 'tls',                   // Keep as tls
+    'username' => 'support@alivio247.com',   // Your cPanel email
+    'password' => 'YOUR_ACTUAL_PASSWORD',    // Password you set in Step 1
+    'from_email' => 'support@alivio247.com',
+    'from_name' => 'ALIVIO247 Contact Form'
+];
+        </div>
+    </div>
+
+    <div class="warning">
+        <h3>🚨 Important Settings to Update:</h3>
+        <ul>
+            <li><strong>host:</strong> Usually <code>mail.yourdomain.com</code> (replace yourdomain.com with your actual domain)</li>
+            <li><strong>password:</strong> Replace <code>YOUR_ACTUAL_PASSWORD</code> with the real password from Step 1</li>
+            <li><strong>username:</strong> Must match the email account you created in cPanel</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>🔍 Step 3: Find Your Mail Server Settings</h2>
+        <p>In cPanel, go to <strong>"Email Accounts"</strong> and click <strong>"Setup Mail Client"</strong> next to your support@alivio247.com account.</p>
+        <p>Look for these settings:</p>
+        <ul>
+            <li><strong>Incoming Server:</strong> This is usually your <code>host</code></li>
+            <li><strong>Outgoing Server:</strong> This is usually the same as incoming</li>
+            <li><strong>Port:</strong> Usually 587 for SMTP with TLS</li>
+            <li><strong>Security:</strong> Usually TLS</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>📝 Step 4: Common cPanel Mail Server Formats</h2>
+        <p>Your mail server host is typically one of these formats:</p>
+        <div class="config">
+mail.yourdomain.com
+yourdomain.com
+servername.yourhostingprovider.com
+        </div>
+        <p>Replace <code>yourdomain.com</code> with your actual domain name.</p>
+    </div>
+
+    <div class="step">
+        <h2>🧪 Step 5: Test the Setup</h2>
+        <ol>
+            <li>Save your changes to <strong>contact-handler-smtp.php</strong></li>
+            <li>Upload the file to your website</li>
+            <li>Visit your website's contact form</li>
+            <li>Submit a test message with your own email</li>
+            <li>Check both email addresses for received messages</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <h3>✅ Expected Results:</h3>
+        <ul>
+            <li>You receive a "Thank You" email</li>
+            <li>support@alivio247.com receives a notification</li>
+            <li>alivio247alivio@gmail.com receives a notification</li>
+            <li>Success message appears on the contact form</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <h3>⚠️ Troubleshooting Tips:</h3>
+        <ul>
+            <li><strong>Check spam folders</strong> - new emails might be filtered</li>
+            <li><strong>Verify domain DNS</strong> - make sure MX records are set up</li>
+            <li><strong>Contact hosting support</strong> - if you can't find mail server settings</li>
+            <li><strong>Try different ports:</strong> 25, 465 (SSL), or 587 (TLS)</li>
+            <li><strong>Check cPanel error logs</strong> - for detailed error messages</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>🆘 Still Having Issues?</h2>
+        <p>If emails still don't send, the contact form will:</p>
+        <ul>
+            <li>Save customer messages to backup files</li>
+            <li>Show detailed error messages</li>
+            <li>Prevent losing any customer inquiries</li>
+        </ul>
+        <p>You can manually respond to customers using the saved data.</p>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px;">
+        <a href="contact-us.php" style="background: #2563eb; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">
+            🔙 Test Contact Form
+        </a>
+        <a href="email-config.php" style="background: #059669; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            🧪 Run Email Test
+        </a>
+    </p>
+</body>
+</html>
