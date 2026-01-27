@@ -21,6 +21,7 @@
 <?php
 // Get the current page filename
 $current_page = basename($_SERVER['PHP_SELF']);
+echo $current_page;
 ?>
 
 <body class="leading-normal tracking-normal text-black gradient" style="font-family: 'Source Sans Pro', sans-serif;">
