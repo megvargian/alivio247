@@ -55,22 +55,30 @@ define('SMTP_SECURE', 'tls');  // 'tls' or 'ssl'
 
 // === EMAIL TEST FUNCTION ===
 function testEmailSetup() {
-    $testEmail = 'test@example.com';  // Replace with your test email
-    $subject = 'ALIVIO247 Email Test';
-    $message = 'This is a test email from ALIVIO247 contact form system.';
+    $testEmail = 'alivio247alivio@gmail.com';  // Change this to your test email
+    $subject = 'ALIVIO247 Email Test - ' . date('Y-m-d H:i:s');
+    $message = 'This is a test email from ALIVIO247 contact form system. If you receive this, PHP mail() is working!';
     $headers = "From: " . FROM_NAME . " <" . SUPPORT_EMAIL_1 . ">\r\n";
     $headers .= "Reply-To: " . SUPPORT_EMAIL_1 . "\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
+    echo "<div style='margin: 20px 0; padding: 15px; border-left: 4px solid #2563eb; background: #f0f9ff;'>";
+    echo "<h4>Testing PHP mail() function...</h4>";
+    echo "<p>Attempting to send test email to: <strong>$testEmail</strong></p>";
+
     if (mail($testEmail, $subject, $message, $headers)) {
-        echo "✅ Test email sent successfully!";
+        echo "<p style='color: #22c55e; font-weight: bold;'>✅ Test email sent successfully!</p>";
+        echo "<p>Check your inbox at $testEmail</p>";
     } else {
-        echo "❌ Failed to send test email. Check your server configuration.";
+        echo "<p style='color: #ef4444; font-weight: bold;'>❌ Failed to send test email.</p>";
+        echo "<p>This means PHP mail() function is not working on your server.</p>";
+        echo "<p><strong>Solution:</strong> You'll need to use SMTP instead.</p>";
     }
+    echo "</div>";
 }
 
 // Uncomment the line below and visit this file directly to test email
-// testEmailSetup();
+testEmailSetup();
 
 // === DEPLOYMENT CHECKLIST ===
 /*

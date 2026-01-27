@@ -82,7 +82,7 @@ include 'header.php';
                     <!-- Contact Form -->
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <h2 class="text-2xl font-bold mb-6">Send Message</h2>
-                        <form id="contactForm" action="contact-handler.php" method="POST">
+                        <form id="contactForm" action="contact-handler-smtp.php" method="POST">
                             <div class="mb-4">
                                 <label class="block text-gray-700 font-semibold mb-2" for="name">Name</label>
                                 <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALIVIO247 - Email Setup Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        .step { background: #f0f9ff; border-left: 4px solid #2563eb; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .success { background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .code { background: #f3f4f6; padding: 10px; border-radius: 5px; font-family: monospace; margin: 10px 0; }
+        h1 { color: #1e40af; }
+        h2 { color: #374151; }
+    </style>
+</head>
+<body>
+    <h1>🔧 ALIVIO247 Email Setup Guide</h1>
+    <p>Since PHP mail() isn't working on your server, here's how to set up SMTP email:</p>
+
+    <div class="step">
+        <h2>📧 Step 1: Test Current Setup</h2>
+        <p><strong>Visit your email-config.php file:</strong></p>
+        <div class="code">yourdomain.com/email-config.php</div>
+        <p>This will show if PHP mail() is working or not.</p>
+    </div>
+
+    <div class="step">
+        <h2>🔑 Step 2: Set Up Gmail App Password</h2>
+        <ol>
+            <li>Go to your Gmail account (alivio247alivio@gmail.com)</li>
+            <li>Click Account Settings → Security</li>
+            <li>Enable "2-Step Verification" if not already enabled</li>
+            <li>Go to "App passwords"</li>
+            <li>Generate an app password for "Mail"</li>
+            <li>Copy the 16-character password (e.g., abcd efgh ijkl mnop)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>⚙️ Step 3: Update SMTP Configuration</h2>
+        <p>Edit the file <strong>contact-handler-smtp.php</strong> and update this line:</p>
+        <div class="code">
+'password' => 'YOUR_GMAIL_APP_PASSWORD', // Replace with the app password from Step 2
+        </div>
+        <p>Replace <code>YOUR_GMAIL_APP_PASSWORD</code> with the actual app password you generated.</p>
+    </div>
+
+    <div class="warning">
+        <h3>⚠️ Alternative Solution: Use cPanel Email</h3>
+        <p>If Gmail SMTP doesn't work, you can use your hosting provider's email:</p>
+        <ol>
+            <li>Go to cPanel → Email Accounts</li>
+            <li>Create or note the password for support@alivio247.com</li>
+            <li>Update the SMTP settings to use your domain's mail server</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>📮 Step 4: Test the Contact Form</h2>
+        <ol>
+            <li>Visit your website's contact page</li>
+            <li>Fill out the form with your own email</li>
+            <li>Submit and check if you receive the emails</li>
+            <li>Check spam folders too</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <h3>✅ Expected Results:</h3>
+        <ul>
+            <li>Customer receives a "Thank You" email</li>
+            <li>support@alivio247.com receives notification</li>
+            <li>alivio247alivio@gmail.com receives notification</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>🚨 If Still Not Working:</h2>
+        <p>The system will create a <strong>contact-results.html</strong> file showing the submitted message, so you won't lose any customer inquiries.</p>
+        <p>Contact your hosting provider and ask them to:</p>
+        <ul>
+            <li>Enable PHP mail() function</li>
+            <li>Check email server configuration</li>
+            <li>Verify domain DNS/MX records</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>📞 Quick Contact Alternative</h2>
+        <p>While fixing the email system, customers can reach you directly:</p>
+        <ul>
+            <li>Email: support@alivio247.com</li>
+            <li>Email: alivio247alivio@gmail.com</li>
+        </ul>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px;">
+        <a href="contact-us.php" style="background: #2563eb; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            🔙 Back to Contact Form
+        </a>
+    </p>
+</body>
+</html>
