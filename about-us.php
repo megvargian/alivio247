@@ -6,103 +6,173 @@ include 'header.php';
     <div class="pt-24 pb-12">
         <div class="container px-3 mx-auto">
             <div class="max-w-6xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">About Alivio 24/7</h1>
-                <p class="text-center text-gray-700 mb-12 text-xl max-w-3xl mx-auto">
-                    Revolutionizing customer service with AI-powered voice agents that work around the clock
-                </p>
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">ALIVIO 24/7</h1>
 
-                <!-- Mission Section -->
+                <!-- Problem Statement -->
                 <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
-                    <h2 class="text-3xl font-bold mb-6 text-center">Our Mission</h2>
-                    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
-                        At Alivio 24/7, our mission is to eliminate the frustration of waiting in voicemail queues by providing
-                        intelligent AI voice agents that deliver instant, professional, and personalized customer service experiences.
-                        We believe every customer deserves immediate attention, and every business deserves the tools to provide it.
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Businesses lose revenue every day due to missed calls, unanswered inquiries, and unscalable outbound efforts. Staff don't answer phones after hours, during peak times, or consistently enough to capture demand. On the outbound side, manual dialing is slow, expensive, and impossible to scale without large call centers.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Missed calls mean lost reservations, lost appointments, lost orders, lost leads — and no visibility into what was missed or why.
                     </p>
                 </div>
 
-                <!-- What We Do Section -->
+                <!-- Our Solution -->
                 <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
-                    <h2 class="text-3xl font-bold mb-6 text-center">What We Do</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-center">Our Solution</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto mb-8">
+                        Our solution at ALIVIO 24/7 is an AI-powered inbound and outbound communication platform that answers, processes, and places calls 24/7 — without increasing headcount.
+                    </p>
+
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-4 text-blue-600">AI Voice Agents</h3>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-600">Inbound:</h3>
                             <p class="text-gray-700 leading-relaxed">
-                                Our cutting-edge AI voice agents handle customer calls with natural, human-like conversations.
-                                They can answer questions, schedule appointments, provide information, and route calls efficiently.
+                                We answer calls instantly, capture customer intent, manage reservations, appointments and/or orders, and deliver structured data (audio, transcripts, summaries) through a real-time dashboard.
                             </p>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-4 text-blue-600">24/7 Availability</h3>
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4 text-green-600">Outbound:</h3>
                             <p class="text-gray-700 leading-relaxed">
-                                Never miss a customer call again. Our AI agents work around the clock, ensuring your business
-                                is always available to serve your customers, regardless of time zones or holidays.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-4 text-blue-600">Industry Specialization</h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                From healthcare to real estate, restaurants to fitness centers, our AI agents are trained to
-                                understand industry-specific needs and provide relevant, accurate responses.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-4 text-blue-600">Seamless Integration</h3>
-                            <p class="text-gray-700 leading-relaxed">
-                                Our platform integrates easily with your existing systems, CRM, and workflows, making
-                                implementation smooth and hassle-free.
+                                We run large-scale calling campaigns to follow up with leads, re-engage customers, and execute targeted outreach — with full call recording, transcription, and performance reporting.
                             </p>
                         </div>
                     </div>
+
+                    <p class="text-center text-gray-700 text-lg mt-6 font-semibold">
+                        The result: more captured revenue, lower operating costs, and full visibility into every call.
+                    </p>
                 </div>
 
                 <!-- Why Choose Us Section -->
                 <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
-                    <h2 class="text-3xl font-bold mb-6 text-center">Why Choose Alivio 24/7</h2>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
+                    <h2 class="text-3xl font-bold mb-6 text-center">Why Choose ALIVIO 24/7</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-600 font-bold">•</span>
                             </div>
-                            <h3 class="font-semibold mb-2">Lightning Fast</h3>
-                            <p class="text-gray-600">Instant response times that keep your customers satisfied</p>
+                            <div>
+                                <h3 class="font-semibold mb-2">Revenue Recovery Engine:</h3>
+                                <p class="text-gray-600">Converts missed calls into completed reservations, orders, and qualified leads.</p>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                </svg>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-600 font-bold">•</span>
                             </div>
-                            <h3 class="font-semibold mb-2">Secure & Reliable</h3>
-                            <p class="text-gray-600">Enterprise-grade security and 99.9% uptime guarantee</p>
+                            <div>
+                                <h3 class="font-semibold mb-2">Scalable by Design:</h3>
+                                <p class="text-gray-600">Handles anything from 10 calls to 10,000 calls instantly.</p>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-600 font-bold">•</span>
                             </div>
-                            <h3 class="font-semibold mb-2">Cost Effective</h3>
-                            <p class="text-gray-600">Reduce overhead while improving service quality</p>
+                            <div>
+                                <h3 class="font-semibold mb-2">Data-Driven:</h3>
+                                <p class="text-gray-600">Every interaction is logged, transcribed, and measurable.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-600 font-bold">•</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Integration-Friendly:</h3>
+                                <p class="text-gray-600">Designed to connect with existing systems.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-blue-600 font-bold">•</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Cost Advantage:</h3>
+                                <p class="text-gray-600">Delivers consistent coverage at a fraction of human staffing costs.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Our Story Section -->
-                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-lg p-8 md:p-12 text-white">
-                    <h2 class="text-3xl font-bold mb-6 text-center">Our Story</h2>
+                <!-- Market Opportunity -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Market Opportunity</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                        Customer-facing businesses — restaurants, clinics, salons, service providers, and business industries — all share the same bottleneck: human-dependent communication. This is a high-frequency, high-volume, recurring-revenue market where even small improvements in call handling directly impact revenue.
+                    </p>
+                </div>
+
+                <!-- Business Model -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Business Model</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-green-600 font-bold">•</span>
+                            </div>
+                            <p class="text-gray-700">Subscription-based pricing for inbound services (monthly, 6-month, annual)</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-green-600 font-bold">•</span>
+                            </div>
+                            <p class="text-gray-700">Usage-based pricing for outbound campaigns</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                                <span class="text-green-600 font-bold">•</span>
+                            </div>
+                            <p class="text-gray-700">Upsell paths through integrations, analytics, and automation</p>
+                        </div>
+                    </div>
+                    <p class="text-center text-gray-700 text-lg mt-6 font-semibold">
+                        Predictable revenue, strong margins, and natural expansion as clients grow.
+                    </p>
+                </div>
+
+                <!-- Proof of Execution -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Proof of Execution</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto mb-4">
+                        The platform has been tested with real businesses, real traffic, and real call volume. Phase 1 is fully stabilized and operational. Clients are actively using the system.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                        Phase 2 expands integrations, deeper analytics, and automation — increasing retention and lifetime value.
+                    </p>
+                </div>
+
+                <!-- Value Proposition -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-lg p-8 md:p-12 text-white mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Value Proposition</h2>
                     <p class="text-lg leading-relaxed text-center max-w-4xl mx-auto mb-6">
-                        Founded in 2024, Alivio 24/7 was born from a simple observation: customers hate waiting, and businesses
-                        struggle to provide round-the-clock support. We brought together experts in AI, telecommunications, and
-                        customer service to create a solution that benefits everyone.
+                        ALIVIO 24/7 replaces missed opportunities with measurable outcomes. It turns phone communication — traditionally a cost center — into a scalable growth channel.
                     </p>
-                    <p class="text-lg leading-relaxed text-center max-w-4xl mx-auto">
-                        Today, we serve businesses across multiple industries, handling thousands of calls daily and helping
-                        our clients deliver exceptional customer experiences. Our technology continues to evolve, learning and
-                        improving with every interaction.
-                    </p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-4">For Clients:</h3>
+                            <p>more revenue, fewer staff costs, zero missed calls.</p>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-4">For Investors:</h3>
+                            <p>a scalable SaaS + usage-based platform in a massive, underserved market.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Closing Positioning -->
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Closing Positioning</h2>
+                    <div class="text-center">
+                        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                            We're not building AI answering.
+                        </p>
+                        <p class="text-gray-700 text-xl font-semibold">
+                            We're building infrastructure for business communication at scale.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Call to Action -->

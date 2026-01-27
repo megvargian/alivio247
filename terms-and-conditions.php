@@ -6,117 +6,207 @@ include 'header.php';
     <div class="pt-24 pb-12">
         <div class="container px-3 mx-auto">
             <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12">
-                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Terms and Conditions</h1>
-                <p class="text-center text-gray-600 mb-8">Last Updated: January 26, 2026</p>
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">ALIVIO247 – Terms & Conditions</h1>
+                <div class="text-center text-gray-600 mb-8">
+                    <p>Effective Date: 26 January 2026</p>
+                    <p>Governing Jurisdiction: Republic of Armenia</p>
+                </div>
 
-                <div class="space-y-6 text-gray-700">
+                <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                    <p class="text-gray-700 text-center">
+                        These Terms & Conditions ("Terms") govern access to and use of the ALIVIO247 platform and services ("Services"). By accessing or using the Services, you agree to be bound by these Terms.
+                    </p>
+                </div>
+
+                <div class="space-y-8 text-gray-700">
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">1. Acceptance of Terms</h2>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">1. Subscription Plans</h2>
                         <p class="mb-4">
-                            By accessing and using Alivio 24/7's services, you accept and agree to be bound by the terms and provision of this agreement.
-                            If you do not agree to abide by the above, please do not use this service.
+                            ALIVIO247 offers subscription-based services under the following plans, as described on our website:
+                        </p>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Basic Plan</li>
+                            <li>Professional Plan</li>
+                            <li>Premium Plan</li>
+                        </ul>
+                        <p>
+                            Each plan includes specific features, usage limits, and service capabilities. Features and availability may vary by plan and may be updated from time to time. Subscription plans are intended for business use only.
                         </p>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">2. Use License</h2>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">2. Subscription, Billing & Renewal</h2>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Billing Frequency</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Subscriptions are offered on Monthly, 6-Month, or Annual prepaid terms.</li>
+                            <li>Annual and 6-Month plans are fixed-term commitments.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Auto-Renewal</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Subscriptions renew automatically at the end of each billing term unless canceled prior to renewal.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Payment Authorization</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>You must provide and maintain accurate billing information.</li>
+                            <li>By subscribing, you authorize us to charge your chosen payment method for all fees due.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Renewal Payment Failure & Grace Period</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>If your payment method on file is declined on the renewal date, your subscription will enter a 5-calendar day grace period.</li>
+                            <li>You must update your payment information and settle the outstanding invoice within this period to maintain uninterrupted service.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Suspension for Non-Payment</h3>
                         <p class="mb-4">
-                            Permission is granted to temporarily access and use Alivio 24/7's AI voice agent services for personal or commercial use.
-                            This is the grant of a license, not a transfer of title, and under this license you may not:
+                            Accounts with invoices outstanding for more than 5 calendar days are subject to immediate suspension until all outstanding balances are paid in full.
                         </p>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Cancellation</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Clients may cancel their subscription at any time through the dashboard.</li>
+                            <li>Services remain active until the end of the current billing term.</li>
+                            <li>No refunds or credits are issued for early cancellation.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Fee Changes</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>ALIVIO247 may revise pricing or plan features with 30 days prior notice.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Refund Policy</h3>
                         <ul class="list-disc list-inside ml-4 space-y-2">
-                            <li>Modify or copy the materials</li>
-                            <li>Use the materials for any commercial purpose without proper licensing</li>
-                            <li>Attempt to decompile or reverse engineer any software contained in Alivio 24/7's services</li>
-                            <li>Remove any copyright or other proprietary notations from the materials</li>
-                            <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                            <li>All payments are non-refundable once processed.</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">3. Service Description</h2>
-                        <p class="mb-4">
-                            Alivio 24/7 provides AI-powered voice agent services designed to handle customer calls across various industries.
-                            We reserve the right to modify, suspend, or discontinue the service at any time without notice.
-                        </p>
-                    </section>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">3. Upgrade & Downgrade Policy</h2>
 
-                    <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">4. User Responsibilities</h2>
-                        <p class="mb-4">Users are responsible for:</p>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Upgrades</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Clients may upgrade their subscription at any time.</li>
+                            <li>Upgrades take effect immediately upon payment.</li>
+                            <li>Charges may be prorated for the remainder of the billing period.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Downgrades</h3>
                         <ul class="list-disc list-inside ml-4 space-y-2">
-                            <li>Maintaining the confidentiality of their account information</li>
-                            <li>All activities that occur under their account</li>
-                            <li>Ensuring compliance with all applicable laws and regulations</li>
-                            <li>Providing accurate and complete information</li>
+                            <li>Downgrades become effective at the start of the next billing cycle.</li>
+                            <li>Features from higher-tier plans will no longer be accessible after the downgrade.</li>
+                            <li>No refunds or partial credits are issued for unused portions of higher-tier plans.</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">5. Payment Terms</h2>
-                        <p class="mb-4">
-                            All fees are exclusive of taxes, which will be charged as applicable. Payment is due according to the terms specified
-                            in your service agreement. Failure to pay may result in suspension or termination of services.
-                        </p>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">4. Free Trial Policy</h2>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li>A 7-day free trial may be offered for Basic, Professional, and Premium plans.</li>
+                            <li>No payment method is required during the trial.</li>
+                            <li>Trial access is limited to one trial per business entity.</li>
+                            <li>Certain features (e.g., advanced integrations, APIs) may be restricted during the trial.</li>
+                            <li>At the end of the trial, the account will be paused unless upgraded.</li>
+                            <li>ALIVIO247 reserves the right to modify, limit, or revoke trial access at its discretion.</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">6. Privacy Policy</h2>
-                        <p class="mb-4">
-                            Your use of Alivio 24/7's services is also governed by our Privacy Policy. We are committed to protecting your
-                            personal information and handling it responsibly.
-                        </p>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">5. Privacy & Data Protection</h2>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Data We Collect</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Business and contact information</li>
+                            <li>Platform usage data and system logs</li>
+                            <li>Call, reservation, appointment, order, or interaction metadata</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Purpose of Processing</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Service delivery and improvement</li>
+                            <li>Customer support and system performance</li>
+                            <li>Legal, accounting, and compliance obligations</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Legal Basis</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Contractual necessity</li>
+                            <li>Legitimate business interests</li>
+                            <li>User consent where required (e.g., call recording, marketing communications)</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Data Sharing & Storage</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>Data is shared only with essential service providers (e.g., hosting, billing).</li>
+                            <li>All data is stored using reasonable security measures, including encryption and access controls.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Data Rights</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li>Clients may request access, correction, or deletion of their data.</li>
+                            <li>Requests should be sent to support@alivio247.com.</li>
+                            <li>Responses are provided within 2 business days.</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">7. Limitation of Liability</h2>
-                        <p class="mb-4">
-                            Alivio 24/7 shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting
-                            from your use of or inability to use the service, even if we have been advised of the possibility of such damages.
-                        </p>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">6. Legal Framework & Disputes</h2>
+                        <p class="mb-4"><strong>Governing Law:</strong> Republic of Armenia</p>
+                        <p class="mb-4"><strong>Jurisdiction:</strong> Courts of Yerevan, Armenia</p>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Limitation of Liability</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>ALIVIO247's total liability is limited to the fees paid by the client in the 12 months preceding the claim.</li>
+                            <li>ALIVIO247 is not liable for indirect, incidental, or consequential damages, including loss of profits or data.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Indemnification</h3>
+                        <p class="mb-2">Clients agree to indemnify and hold harmless ALIVIO247 from claims arising from:</p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li>Misuse of the Services</li>
+                            <li>Violation of applicable laws or regulations</li>
+                            <li>Improper or unlawful use of AI-powered calling, ordering, or reservation features</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">8. Service Availability</h2>
-                        <p class="mb-4">
-                            While we strive to maintain 24/7 availability, we do not guarantee uninterrupted access to our services.
-                            Maintenance, updates, or technical issues may occasionally affect service availability.
-                        </p>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">7. Miscellaneous</h2>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Amendments</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>ALIVIO247 may update these Terms with 14 days' notice via email or platform notification.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Severability</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>If any provision is found unenforceable, the remaining provisions remain in effect.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Entire Agreement</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2 mb-4">
+                            <li>These Terms constitute the entire agreement and supersede prior discussions or proposals.</li>
+                        </ul>
+
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">Force Majeure</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li>ALIVIO247 is not liable for service disruptions caused by events beyond reasonable control, including natural disasters, infrastructure failures, or regulatory actions.</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">9. Intellectual Property</h2>
-                        <p class="mb-4">
-                            All content, features, and functionality of Alivio 24/7's services are owned by us and are protected by
-                            international copyright, trademark, and other intellectual property laws.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">10. Termination</h2>
-                        <p class="mb-4">
-                            We may terminate or suspend access to our service immediately, without prior notice or liability, for any reason,
-                            including breach of these Terms and Conditions.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">11. Changes to Terms</h2>
-                        <p class="mb-4">
-                            We reserve the right to modify these terms at any time. We will notify users of any material changes.
-                            Your continued use of the service after such modifications constitutes acceptance of the updated terms.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h2 class="text-2xl font-bold mb-4 text-gray-900">12. Contact Information</h2>
-                        <p class="mb-4">
-                            If you have any questions about these Terms and Conditions, please contact us at:
-                        </p>
-                        <p class="ml-4">
-                            Email: support@alivio247.com<br>
-                            Phone: +1 (555) 123-4567
-                        </p>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">8. Contact Information</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <p class="font-semibold mb-4">ALIVIO247</p>
+                            <p class="mb-2"><strong>Email:</strong> support@alivio247.com / alivio247alivio@gmail.com</p>
+                            <p class="mb-2"><strong>Address:</strong></p>
+                            <p class="ml-4">
+                                Shahumyan 16 Street, 79 (formerly Vakhtang Ananyan Street, 79),<br>
+                                Malatia-Sebastia Administrative District,<br>
+                                Yerevan, Republic of Armenia, 0065
+                            </p>
+                        </div>
                     </section>
                 </div>
             </div>
