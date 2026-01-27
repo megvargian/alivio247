@@ -48,6 +48,19 @@ $supportEmail1 = 'support@alivio247.com';
 $supportEmail2 = 'alivio247alivio@gmail.com';
 $currentDateTime = date('F j, Y \a\t g:i A');
 
+// === DEBUG FUNCTIONS ===
+function debugEmail($content, $filename = 'email-debug.txt') {
+    $debug = "=== EMAIL DEBUG " . date('Y-m-d H:i:s') . " ===\n";
+    $debug .= "Content length: " . strlen($content) . "\n";
+    $debug .= "Line endings check:\n";
+    $debug .= "  Contains \\n only: " . (strpos($content, "\n") !== false && strpos($content, "\r\n") === false ? 'YES' : 'NO') . "\n";
+    $debug .= "  Contains \\r\\n: " . (strpos($content, "\r\n") !== false ? 'YES' : 'NO') . "\n";
+    $debug .= "  Contains bare \\r: " . (strpos($content, "\r") !== false && strpos($content, "\r\n") === false ? 'YES' : 'NO') . "\n";
+    $debug .= "Raw content (first 500 chars):\n" . substr($content, 0, 500) . "\n";
+    $debug .= "===========================================\n\n";
+    file_put_contents($filename, $debug, FILE_APPEND);
+}
+
 // === REAL SMTP EMAIL SENDING (NO mail() function) ===
 function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
     $log = [];
@@ -191,7 +204,15 @@ function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
     $email_data .= "Content-Type: text/html; charset=UTF-8\r\n";
     $email_data .= "X-Mailer: ALIVIO247 SMTP Client\r\n";
     $email_data .= "\r\n";
-    $email_data .= $body;
+
+    // Normalize line endings in body (convert \n to \r\n, but avoid double \r\r\n)
+    $normalized_body = str_replace("\r\n", "\n", $body); // First normalize to \n
+    $normalized_body = str_replace("\n", "\r\n", $normalized_body); // Then convert to \r\n
+
+    // Debug the normalized body
+    debugEmail($normalized_body, 'smtp-body-debug.txt');
+
+    $email_data .= $normalized_body;
     $email_data .= "\r\n.\r\n";
 
     fputs($socket, $email_data);
@@ -215,8 +236,7 @@ function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
 
 // === EMAIL TEMPLATES ===
 $customerSubject = "Thank you for contacting ALIVIO247";
-$customerMessage = "
-<!DOCTYPE html>
+$customerMessage = "<!DOCTYPE html>
 <html>
 <head>
     <meta charset='UTF-8'>
@@ -265,8 +285,7 @@ $customerMessage = "
 ";
 
 $supportSubject = "New Contact Form Submission - ALIVIO247";
-$supportMessage = "
-<!DOCTYPE html>
+$supportMessage = "<!DOCTYPE html>
 <html>
 <head>
     <meta charset='UTF-8'>
