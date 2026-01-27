@@ -42,6 +42,26 @@ $test_configs = [
         'username' => 'support@alivio247.com',
         'password' => '{TC$zr88Q2$*', // UPDATE THIS
         'description' => 'Alternative GoDaddy SMTP server'
+    ],
+
+    // Test 5: Try with username only (without @domain)
+    [
+        'name' => 'Username without domain',
+        'smtp_host' => 'smtpout.secureserver.net',
+        'smtp_port' => 587,
+        'username' => 'support', // Just the username part
+        'password' => '{TC$zr88Q2$*',
+        'description' => 'Some servers require username without @domain'
+    ],
+
+    // Test 6: Try with different auth encoding
+    [
+        'name' => 'Full email with domain suffix',
+        'smtp_host' => 'smtpout.secureserver.net',
+        'smtp_port' => 587,
+        'username' => 'support@alivio247.com@secureserver.net',
+        'password' => '{TC$zr88Q2$*',
+        'description' => 'Some GoDaddy setups require domain suffix'
     ]
 ];
 
@@ -204,6 +224,40 @@ function testAuth($config) {
                 </div>
             </div>
         <?php endforeach; ?>
+
+        <div style="background: #fef2f2; border: 2px solid #ef4444; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h2>❌ All Authentication Failed - Critical Steps:</h2>
+            <ol>
+                <li><strong>🌐 Test Webmail Login First:</strong>
+                    <br>Go to <a href="https://email.godaddy.com" target="_blank" style="color: #2563eb;">https://email.godaddy.com</a>
+                    <br>Try logging in with: <code style="background: #f3f4f6; padding: 2px 6px;">support@alivio247.com</code> and password: <code style="background: #f3f4f6; padding: 2px 6px;">{TC$zr88Q2$*</code>
+                    <br><span style="color: #dc2626;">If webmail login fails, the password is definitely wrong!</span>
+                </li>
+
+                <li><strong>📧 Check GoDaddy Email Dashboard:</strong>
+                    <br>• Log into GoDaddy → My Products → Email & Office
+                    <br>• Click on your domain → Manage All Email Accounts
+                    <br>• Click on support@alivio247.com → Settings
+                    <br>• Look for "SMTP Settings" or "Outgoing Mail Settings"
+                    <br>• Ensure SMTP/IMAP access is enabled
+                </li>
+
+                <li><strong>🔑 Try App Password (Common Fix):</strong>
+                    <br>• In email account settings, look for "App Passwords"
+                    <br>• Generate a new password specifically for SMTP
+                    <br>• Use that instead of your regular login password
+                </li>
+
+                <li><strong>📞 Contact GoDaddy Support:</strong>
+                    <br>Tell them: <em>"I need SMTP authentication enabled for support@alivio247.com. Getting 535 authentication rejected from smtpout.secureserver.net"</em>
+                </li>
+            </ol>
+
+            <p style="background: #dbeafe; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                <strong>🧪 Good News:</strong> Your server connection works perfectly (TLS enabled, SMTP responding).
+                The issue is purely with authentication credentials.
+            </p>
+        </div>
 
         <div class="instructions">
             <h2>🔍 What To Do Next:</h2>
