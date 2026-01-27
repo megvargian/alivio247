@@ -94,30 +94,11 @@ function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
         }
     }
 
-    // AUTH LOGIN
-    fputs($socket, "AUTH LOGIN\r\n");
+    // AUTH PLAIN (GoDaddy prefers this over AUTH LOGIN)
+    $auth_string = "\0" . $config['username'] . "\0" . $config['password'];
+    fputs($socket, "AUTH PLAIN " . base64_encode($auth_string) . "\r\n");
     $response = fgets($socket, 256);
-    $log[] = "AUTH LOGIN: " . trim($response);
-
-    if (substr($response, 0, 3) != '334') {
-        fclose($socket);
-        return ['success' => false, 'error' => 'AUTH LOGIN failed: ' . $response, 'log' => $log];
-    }
-
-    // Send username
-    fputs($socket, base64_encode($config['username']) . "\r\n");
-    $response = fgets($socket, 256);
-    $log[] = "Username: " . trim($response);
-
-    if (substr($response, 0, 3) != '334') {
-        fclose($socket);
-        return ['success' => false, 'error' => 'Username rejected: ' . $response, 'log' => $log];
-    }
-
-    // Send password
-    fputs($socket, base64_encode($config['password']) . "\r\n");
-    $response = fgets($socket, 256);
-    $log[] = "Password: " . trim($response);
+    $log[] = "AUTH PLAIN: " . trim($response);
 
     if (substr($response, 0, 3) != '235') {
         fclose($socket);
