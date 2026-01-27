@@ -74,6 +74,12 @@ function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
     $response = fgets($socket, 256);
     $log[] = "EHLO: " . trim($response);
 
+    // Read all EHLO response lines (multi-line response)
+    while (substr($response, 3, 1) == '-') {
+        $response = fgets($socket, 256);
+        $log[] = "EHLO continued: " . trim($response);
+    }
+
     // STARTTLS if using TLS
     if ($config['encryption'] === 'tls') {
         fputs($socket, "STARTTLS\r\n");
@@ -87,22 +93,62 @@ function sendSMTPEmail($to, $subject, $body, $config, $replyTo = '') {
                 return ['success' => false, 'error' => 'Failed to enable TLS encryption', 'log' => $log];
             }
 
-            // EHLO again after TLS
+            // EHLO again after TLS - and read ALL response lines
             fputs($socket, "EHLO " . ($_SERVER['HTTP_HOST'] ?? 'localhost') . "\r\n");
             $response = fgets($socket, 256);
             $log[] = "EHLO after TLS: " . trim($response);
+
+            // Read all EHLO response lines after TLS
+            while (substr($response, 3, 1) == '-') {
+                $response = fgets($socket, 256);
+                $log[] = "EHLO after TLS continued: " . trim($response);
+            }
         }
     }
 
-    // AUTH PLAIN (GoDaddy prefers this over AUTH LOGIN)
+    // Try AUTH PLAIN first, then AUTH LOGIN as fallback
+    $auth_success = false;
+
+    // Method 1: AUTH PLAIN (preferred by GoDaddy)
     $auth_string = "\0" . $config['username'] . "\0" . $config['password'];
     fputs($socket, "AUTH PLAIN " . base64_encode($auth_string) . "\r\n");
     $response = fgets($socket, 256);
-    $log[] = "AUTH PLAIN: " . trim($response);
+    $log[] = "AUTH PLAIN attempt: " . trim($response);
 
-    if (substr($response, 0, 3) != '235') {
+    if (substr($response, 0, 3) == '235') {
+        $auth_success = true;
+        $log[] = "AUTH PLAIN successful";
+    } else {
+        $log[] = "AUTH PLAIN failed, trying AUTH LOGIN";
+
+        // Method 2: AUTH LOGIN (fallback)
+        fputs($socket, "AUTH LOGIN\r\n");
+        $response = fgets($socket, 256);
+        $log[] = "AUTH LOGIN: " . trim($response);
+
+        if (substr($response, 0, 3) == '334') {
+            // Send username
+            fputs($socket, base64_encode($config['username']) . "\r\n");
+            $response = fgets($socket, 256);
+            $log[] = "Username: " . trim($response);
+
+            if (substr($response, 0, 3) == '334') {
+                // Send password
+                fputs($socket, base64_encode($config['password']) . "\r\n");
+                $response = fgets($socket, 256);
+                $log[] = "Password: " . trim($response);
+
+                if (substr($response, 0, 3) == '235') {
+                    $auth_success = true;
+                    $log[] = "AUTH LOGIN successful";
+                }
+            }
+        }
+    }
+
+    if (!$auth_success) {
         fclose($socket);
-        return ['success' => false, 'error' => 'Authentication failed: ' . $response, 'log' => $log];
+        return ['success' => false, 'error' => 'Both AUTH PLAIN and AUTH LOGIN failed. Last response: ' . $response, 'log' => $log];
     }
 
     // MAIL FROM
