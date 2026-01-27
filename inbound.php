@@ -175,11 +175,6 @@ include 'header.php';
       padding: 40px 0px;
   }
 
-  .container {
-      max-width: 1200px;
-      margin: 0 auto;
-  }
-
   .header {
       text-align: center;
       margin-bottom: 40px;
