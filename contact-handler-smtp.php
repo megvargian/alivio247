@@ -39,7 +39,7 @@ $smtpConfig = [
     'port' => 587,  // Gmail uses 587 for TLS
     'encryption' => 'tls',  // Use TLS encryption
     'username' => 'alivio247alivio@gmail.com',  // Your Gmail account
-    'password' => 'PASTE_YOUR_16_CHAR_APP_PASSWORD_HERE',  // Gmail App Password (replace this!)
+    'password' => 'jbkq jsyx yywt wclr',  // Gmail App Password (replace this!)
     'from_email' => 'alivio247alivio@gmail.com',  // Send from Gmail
     'from_name' => 'ALIVIO247 Contact Form'
 ];
