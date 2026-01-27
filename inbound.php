@@ -59,7 +59,7 @@ include 'header.php';
             </ul>
 
             <div class="cta-row">
-                <button class="package-cta">Contact Sales</button>
+                <button class="package-cta" onclick="contactSales()">Contact Sales</button>
             </div>
         </div>
 

@@ -20,7 +20,7 @@
 
 <?php
 // Get the current page filename
-$current_page = basename($_SERVER['PHP_SELF']);
+$current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 echo $current_page;
 ?>
 
@@ -55,7 +55,7 @@ echo $current_page;
                 class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 lg:bg-transparent text-black p-4 lg:p-0 z-20">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
                     <li class="mr-3">
-                        <a class="inline-block py-2 px-4 text-black font-bold no-underline"
+                        <a class="inline-block py-2 px-4 text-black font-bold no-underline <?php echo ($current_page == '/') ? 'active' : ''; ?>"
                             href="/">Home</a>
                     </li>
                     <!-- <li class="mr-3">
@@ -63,7 +63,7 @@ echo $current_page;
                             href="#">Industries</a>
                     </li> -->
                     <li class="mr-3 dropdown">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 cursor-pointer <?php echo ($current_page == 'inbound.php') ? 'active' : ''; ?>"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 cursor-pointer <?php echo ($current_page == '/inbound.php') ? 'active' : ''; ?>"
                             onclick="toggleMobileDropdown(event)">
                             Pricing
                             <svg class="inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,15 +76,15 @@ echo $current_page;
                         </div>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == 'about-us.php') ? 'active' : ''; ?>"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == '/about-us.php') ? 'active' : ''; ?>"
                             href="about-us.php">About Us</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == 'contact-us.php') ? 'active' : ''; ?>"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == '/contact-us.php') ? 'active' : ''; ?>"
                             href="contact-us.php">Contact Us</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == 'terms-and-conditions.php') ? 'active' : ''; ?>"
+                        <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4 <?php echo ($current_page == '/terms-and-conditions.php') ? 'active' : ''; ?>"
                             href="terms-and-conditions.php">Terms & Conditions</a>
                     </li>
                 </ul>

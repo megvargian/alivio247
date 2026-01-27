@@ -179,7 +179,7 @@ include 'header.php';
                 <div class="text-center mt-12">
                     <h2 class="text-2xl font-bold mb-4">Ready to Transform Your Customer Service?</h2>
                     <p class="text-gray-700 mb-6">Join hundreds of businesses that trust Alivio 24/7</p>
-                    <button onclick="window.location.href='contact-us.php'"
+                    <button onclick="window.location.href='inbound.php'"
                             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         Get Started Today
                     </button>
