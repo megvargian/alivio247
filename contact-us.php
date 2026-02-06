@@ -1,5 +1,9 @@
 <?php
 include 'header.php';
+
+// Load reCAPTCHA configuration
+$recaptcha_config = include 'recaptcha-config.php';
+$recaptcha_site_key = $recaptcha_config['site_key'];
 ?>
 
     <!--Contact Us Section-->
@@ -107,6 +111,12 @@ include 'header.php';
                                           id="message" name="message" rows="4" required></textarea>
                             </div>
 
+                            <!-- reCAPTCHA widget -->
+                            <div class="mb-6">
+                                <div class="g-recaptcha" data-sitekey="<?php echo $recaptcha_site_key; ?>"></div>
+                                <div id="recaptcha-error" class="text-red-500 text-sm mt-2 hidden">Please complete the reCAPTCHA verification</div>
+                            </div>
+
                             <button type="submit" id="submitBtn"
                                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 <span class="submit-text">Send Message</span>
@@ -119,8 +129,24 @@ include 'header.php';
         </div>
     </div>
 
+    <!-- reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Check reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse();
+        const errorDiv = document.getElementById('recaptcha-error');
+
+        if (recaptchaResponse.length === 0) {
+            e.preventDefault();
+            errorDiv.classList.remove('hidden');
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return false;
+        } else {
+            errorDiv.classList.add('hidden');
+        }
+
         const submitBtn = document.getElementById('submitBtn');
         const submitText = submitBtn.querySelector('.submit-text');
         const loadingText = submitBtn.querySelector('.loading-text');

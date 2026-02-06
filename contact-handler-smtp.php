@@ -2,6 +2,10 @@
 // SMTP-ONLY Contact Form Handler for ALIVIO247
 // Uses cPanel SMTP for reliable email delivery
 
+// Load reCAPTCHA configuration
+$recaptcha_config = include 'recaptcha-config.php';
+$recaptcha_secret_key = $recaptcha_config['secret_key'];
+
 // Check if form was submitted via POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: contact-us.php');
@@ -13,11 +17,58 @@ function sanitizeInput($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
+// Function to verify reCAPTCHA
+function verifyRecaptcha($recaptcha_response, $secret_key) {
+    if (empty($recaptcha_response)) {
+        return ['success' => false, 'error' => 'reCAPTCHA response is required'];
+    }
+
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret' => $secret_key,
+        'response' => $recaptcha_response,
+        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+    ];
+
+    $options = [
+        'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+
+    if ($result === FALSE) {
+        return ['success' => false, 'error' => 'Unable to verify reCAPTCHA'];
+    }
+
+    $response_data = json_decode($result, true);
+
+    if ($response_data['success']) {
+        return ['success' => true, 'error' => ''];
+    } else {
+        $error_codes = $response_data['error-codes'] ?? ['unknown-error'];
+        return ['success' => false, 'error' => 'reCAPTCHA verification failed: ' . implode(', ', $error_codes)];
+    }
+}
+
 // Get form data
 $name = sanitizeInput($_POST['name'] ?? '');
 $email = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 $phone = sanitizeInput($_POST['phone'] ?? '');
 $message = sanitizeInput($_POST['message'] ?? '');
+$recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
+
+// Verify reCAPTCHA first
+$recaptcha_result = verifyRecaptcha($recaptcha_response, $recaptcha_secret_key);
+if (!$recaptcha_result['success']) {
+    $errorMsg = urlencode('Security verification failed: ' . $recaptcha_result['error']);
+    header("Location: contact-us.php?error=$errorMsg");
+    exit;
+}
 
 // Validate required fields
 $errors = [];
