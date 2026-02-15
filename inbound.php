@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<div class="container">
+<div class="container" style="margin: auto;">
     <div class="header">
         <h1>Choose Your Alivio247 Package</h1>
         <p>Professional call handling solutions designed to grow with your business</p>
