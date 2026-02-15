@@ -15,9 +15,9 @@ include 'header.php';
                 <h2>Basic</h2>
                 <p class="package-tagline">24/7 Call Coverage & Visibility</p>
                 <div class="pricing-container">
-                    <div class="monthly-price">$199<span
+                    <div class="monthly-price">$99<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $1,999/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
+                    <div class="yearly-option">or $990/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
                 </div>
             </div>
 
@@ -72,9 +72,9 @@ include 'header.php';
                 <h2>Professional</h2>
                 <p class="package-tagline">Advanced Engagement & Automation</p>
                 <div class="pricing-container">
-                    <div class="monthly-price">$349<span
+                    <div class="monthly-price">$249<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $3,499/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
+                    <div class="yearly-option">or $2,490/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
                 </div>
             </div>
 
@@ -120,9 +120,9 @@ include 'header.php';
                 <h2>Premium</h2>
                 <p class="package-tagline">Full Operational Control</p>
                 <div class="pricing-container">
-                    <div class="monthly-price">$449<span
+                    <div class="monthly-price">$349<span
                             style="font-size: 0.6em; font-weight: 600; color: #7f8c8d;">/month</span></div>
-                    <div class="yearly-option">or $4,499/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
+                    <div class="yearly-option">or $3,490/year<span style="color: #fff; font-weight: 700;">&nbsp;&nbsp;•&nbsp;&nbsp;2 Months Free</span></div>
                 </div>
             </div>
 
