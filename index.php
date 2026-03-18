@@ -275,6 +275,310 @@ include 'header.php';
         </div>
     </section>
 
+    <!-- Expanded Use Cases Benefits Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white scroll-reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 text-reveal">How Different Industries Benefit</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-reveal">See real-world examples of how Alivio247 transforms customer interactions across various sectors</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 stagger-children">
+                <!-- Healthcare -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 slide-in-left">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Healthcare Providers</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Reduce no-shows by 40% with automated appointment reminders. Handle urgent patient inquiries 24/7 while your team focuses on critical care.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Automated appointment scheduling & confirmations</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Insurance verification calls</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Prescription refill requests & follow-ups</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 slide-in-right">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-3m2 3l2-3m2 3l2-3m2 3l2-3m2 3l2-3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Real Estate Agencies</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Qualify leads 24/7 before your agents connect. Schedule property showings and follow up with prospects automatically.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Lead qualification & property inquiries</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Showing appointment scheduling</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Follow-up calls & property updates</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Restaurants -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 slide-in-left">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Restaurants & Cafes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Take reservations without staff involvement. Send reservation reminders and upsell specials to past customers.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Reservation booking & confirmation</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Special event & menu inquiry handling</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">No-show reminder calls</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- E-commerce -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 slide-in-right">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">E-commerce & Retail</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Handle order status inquiries and returns automatically. Reduce support costs while improving customer satisfaction.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Order tracking & status updates</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Return & refund processing</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold mt-1">✓</span>
+                            <span class="text-gray-700">Post-purchase follow-up & reviews</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-white scroll-reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 text-reveal">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto text-reveal">Choose the plan that fits your business needs. No hidden fees, cancel anytime.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 stagger-children">
+                <!-- Starter Plan -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl transition duration-300 card-reveal">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Starter</h3>
+                    <p class="text-gray-600 mb-6">Perfect for small businesses just getting started</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-800">$99</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-200 transition duration-300 mb-8">
+                        Get Started
+                    </button>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">1 AI Agent</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">500 minutes/month</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Email Support</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Basic Integrations</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Call Analytics</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-500 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition duration-300 card-reveal relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 mt-4">Professional</h3>
+                    <p class="text-gray-600 mb-6">Best for growing businesses with high call volume</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-blue-600">$299</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 mb-8">
+                        Start Free Trial
+                    </button>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">5 AI Agents</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">2500 minutes/month</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">Priority Support</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">Advanced Integrations</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">Advanced Analytics</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700 font-semibold">Custom Training</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-500 hover:shadow-xl transition duration-300 card-reveal">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Enterprise</h3>
+                    <p class="text-gray-600 mb-6">For large organizations with custom needs</p>
+                    <div class="mb-6">
+                        <span class="text-3xl font-bold text-gray-800">Custom</span>
+                        <p class="text-gray-600 text-sm mt-2">Contact sales for pricing</p>
+                    </div>
+                    <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls border-2 border-purple-500 text-purple-600 font-semibold py-3 rounded-lg hover:bg-purple-50 transition duration-300 mb-8">
+                        Schedule Demo
+                    </button>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Unlimited Agents</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Unlimited Minutes</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Dedicated Account Manager</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Custom Integrations</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Priority 24/7 Support</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">SLA Guarantee</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8 text-center scale-up">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions About Pricing</h3>
+                <div class="grid md:grid-cols-2 gap-8 mt-8 text-left">
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-2">Can I switch plans anytime?</h4>
+                        <p class="text-gray-600">Yes! Upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-2">Is there a setup fee?</h4>
+                        <p class="text-gray-600">No, there are no setup fees. Start with your chosen plan and begin using Alivio247 immediately.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-2">What happens if I exceed my minutes?</h4>
+                        <p class="text-gray-600">We'll notify you when you're approaching your limit. You can add extra minutes as needed or upgrade your plan.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-2">Do you offer discounts for annual billing?</h4>
+                        <p class="text-gray-600">Yes! Pay annually and save 20% on any plan. Contact our sales team for more details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action Section -->
     <section class="py-20 main-gradient bg-reveal scroll-reveal">
         <div class="container mx-auto px-4 text-center">
