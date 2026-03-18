@@ -244,8 +244,8 @@ include 'header.php';
 
                 <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl text-center hover:shadow-lg transform transition hover:scale-105 duration-300 card-reveal">
                     <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center float-element">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm3.6 8.2l-4.2 4.2a1 1 0 01-1.4 0l-1.8-1.8a1 1 0 111.4-1.4l1.1 1.1 3.5-3.5a1 1 0 111.4 1.4z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Insurance</h3>
@@ -254,8 +254,8 @@ include 'header.php';
 
                 <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl text-center hover:shadow-lg transform transition hover:scale-105 duration-300 card-reveal">
                     <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center float-element">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2.5 19.5l19-7.5-19-7.5 4.6 7.2-4.6 7.8zM9 13l7 2.8-7.9 3.1 1.9-5.9z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Travel</h3>
@@ -404,47 +404,42 @@ include 'header.php';
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 stagger-children">
-                <!-- Starter Plan -->
+                <!-- Basic Plan -->
                 <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl transition duration-300 card-reveal">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Starter</h3>
-                    <p class="text-gray-600 mb-6">Perfect for small businesses just getting started</p>
+                    <div class="mb-4">
+                        <div class="text-3xl font-bold text-gray-800 mb-2">✓</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Basic</h3>
+                        <p class="text-gray-600 text-sm">24/7 Call Coverage & Visibility</p>
+                    </div>
                     <div class="mb-6">
                         <span class="text-4xl font-bold text-gray-800">$99</span>
-                        <span class="text-gray-600">/month</span>
+                        <span class="text-gray-600 text-sm">/month</span>
+                        <p class="text-gray-600 text-sm mt-2">or <span class="font-semibold">$990/year</span> <span class="text-green-600 font-semibold">• 2 Months Free</span></p>
                     </div>
                     <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls bg-gray-100 text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-200 transition duration-300 mb-8">
-                        Get Started
+                        Contact Sales
                     </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">1 AI Agent</span>
+                    <p class="text-gray-600 text-sm mb-6">Built for businesses that need constant availability and full call visibility.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold">✓</span>
+                            <span class="text-gray-700">24/7 Availability</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">500 minutes/month</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold">✓</span>
+                            <span class="text-gray-700">Intelligent Call Handling</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Email Support</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold">✓</span>
+                            <span class="text-gray-700">Real-Time Dashboard Access</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Basic Integrations</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold">✓</span>
+                            <span class="text-gray-700">Call Transcripts & Recordings</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Call Analytics</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-500 font-bold">✓</span>
+                            <span class="text-gray-700">Basic Customer Information Capture</span>
                         </li>
                     </ul>
                 </div>
@@ -452,52 +447,49 @@ include 'header.php';
                 <!-- Professional Plan (Featured) -->
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-500 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition duration-300 card-reveal relative">
                     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2 mt-4">Professional</h3>
-                    <p class="text-gray-600 mb-6">Best for growing businesses with high call volume</p>
+                    <div class="mb-4 mt-4">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">⚡</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Professional</h3>
+                        <p class="text-gray-600 text-sm">Advanced Engagement & Automation</p>
+                    </div>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-blue-600">$299</span>
-                        <span class="text-gray-600">/month</span>
+                        <span class="text-4xl font-bold text-blue-600">$249</span>
+                        <span class="text-gray-600 text-sm">/month</span>
+                        <p class="text-gray-600 text-sm mt-2">or <span class="font-semibold">$2,490/year</span> <span class="text-green-600 font-semibold">• 2 Months Free</span></p>
                     </div>
                     <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 mb-8">
                         Start Free Trial
                     </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700 font-semibold">5 AI Agents</span>
+                    <p class="text-gray-600 text-sm mb-6">Everything in Basic, plus automation, analytics, and system connectivity.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">Reservation/Appointment Tracking</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700 font-semibold">2500 minutes/month</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">SMS Confirmation Messages</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700 font-semibold">Priority Support</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">Advanced Customer Information Capture</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700 font-semibold">Advanced Integrations</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">Customer Data Analytics</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700 font-semibold">Advanced Analytics</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">System Integrations</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-blue-500 font-bold">✓</span>
+                            <span class="text-gray-700">Enhanced Reporting</span>
+                        </li>
+                    </ul>
+                </div>
                             <span class="text-gray-700 font-semibold">Custom Training</span>
                         </li>
                     </ul>
@@ -506,57 +498,51 @@ include 'header.php';
                 <!-- Enterprise Plan -->
                 <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-500 hover:shadow-xl transition duration-300 card-reveal">
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Enterprise</h3>
-                    <p class="text-gray-600 mb-6">For large organizations with custom needs</p>
+                       <div class="mb-4">
+                           <div class="text-3xl font-bold text-purple-600 mb-2">★</div>
+                           <h3 class="text-2xl font-bold text-gray-800">Premium</h3>
+                           <p class="text-gray-600 text-sm">Full Operational Control</p>
+                       </div>
                     <div class="mb-6">
-                        <span class="text-3xl font-bold text-gray-800">Custom</span>
-                        <p class="text-gray-600 text-sm mt-2">Contact sales for pricing</p>
+                            <span class="text-4xl font-bold text-gray-800">$349</span>
+                            <span class="text-gray-600 text-sm">/month</span>
+                            <p class="text-gray-600 text-sm mt-2">or <span class="font-semibold">$3,490/year</span> <span class="text-green-600 font-semibold">• 2 Months Free</span></p>
                     </div>
                     <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls border-2 border-purple-500 text-purple-600 font-semibold py-3 rounded-lg hover:bg-purple-50 transition duration-300 mb-8">
                         Schedule Demo
                     </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Unlimited Agents</span>
+                       <p class="text-gray-600 text-sm mb-6">Everything in Professional, plus deep analytics and priority expansion.</p>
+                       <ul class="space-y-3">
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Reservation Management</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Unlimited Minutes</span>
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Order Processing</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Dedicated Account Manager</span>
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Comprehensive Real-Time Dashboard</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Custom Integrations</span>
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Advanced Reporting & Analytics</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Priority 24/7 Support</span>
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Performance Metrics & Conversion Tracking</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">SLA Guarantee</span>
+                           <li class="flex items-start space-x-3">
+                               <span class="text-purple-500 font-bold">✓</span>
+                               <span class="text-gray-700">Priority Integration & Feature Expansion</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="mt-16 bg-gray-50 rounded-2xl p-8 text-center scale-up">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions About Pricing</h3>
+                   <h3 class="text-2xl font-bold text-gray-800 mb-4">Questions About Pricing?</h3>
                 <div class="grid md:grid-cols-2 gap-8 mt-8 text-left">
                     <div>
                         <h4 class="font-bold text-gray-800 mb-2">Can I switch plans anytime?</h4>
@@ -568,13 +554,15 @@ include 'header.php';
                     </div>
                     <div>
                         <h4 class="font-bold text-gray-800 mb-2">What happens if I exceed my minutes?</h4>
-                        <p class="text-gray-600">We'll notify you when you're approaching your limit. You can add extra minutes as needed or upgrade your plan.</p>
+                           <p class="text-gray-600">Overage charges apply at $0.50/minute. We recommend upgrading your plan for consistent high usage.</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-gray-800 mb-2">Do you offer discounts for annual billing?</h4>
-                        <p class="text-gray-600">Yes! Pay annually and save 20% on any plan. Contact our sales team for more details.</p>
+                           <p class="text-gray-600">Yes! Pay annually and get 2 months free. That's a 17% savings compared to monthly billing.</p>
                     </div>
                 </div>
+                   <hr class="my-8">
+                   <p class="text-gray-600 text-sm"><span class="font-semibold">Flexibility Option:</span> All plans are available in a 6-month flexibility option, offering one free month while allowing businesses to benefit from discounted pricing without committing to a full annual term.</p>
             </div>
         </div>
     </section>
