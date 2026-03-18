@@ -244,7 +244,7 @@ include 'header.php';
 
                 <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl text-center hover:shadow-lg transform transition hover:scale-105 duration-300 card-reveal">
                     <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center float-element">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm3.6 8.2l-4.2 4.2a1 1 0 01-1.4 0l-1.8-1.8a1 1 0 111.4-1.4l1.1 1.1 3.5-3.5a1 1 0 111.4 1.4z"/>
                         </svg>
                     </div>
@@ -254,7 +254,7 @@ include 'header.php';
 
                 <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl text-center hover:shadow-lg transform transition hover:scale-105 duration-300 card-reveal">
                     <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center float-element">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M2.5 19.5l19-7.5-19-7.5 4.6 7.2-4.6 7.8zM9 13l7 2.8-7.9 3.1 1.9-5.9z"/>
                         </svg>
                     </div>
@@ -407,7 +407,6 @@ include 'header.php';
                 <!-- Basic Plan -->
                 <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl transition duration-300 card-reveal">
                     <div class="mb-4">
-                        <div class="text-3xl font-bold text-gray-800 mb-2">✓</div>
                         <h3 class="text-2xl font-bold text-gray-800">Basic</h3>
                         <p class="text-gray-600 text-sm">24/7 Call Coverage & Visibility</p>
                     </div>
@@ -450,7 +449,6 @@ include 'header.php';
                         <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
                     </div>
                     <div class="mb-4 mt-4">
-                        <div class="text-3xl font-bold text-blue-600 mb-2">⚡</div>
                         <h3 class="text-2xl font-bold text-gray-800">Professional</h3>
                         <p class="text-gray-600 text-sm">Advanced Engagement & Automation</p>
                     </div>
@@ -490,52 +488,46 @@ include 'header.php';
                         </li>
                     </ul>
                 </div>
-                            <span class="text-gray-700 font-semibold">Custom Training</span>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Enterprise Plan -->
+                <!-- Premium Plan -->
                 <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-500 hover:shadow-xl transition duration-300 card-reveal">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Enterprise</h3>
-                       <div class="mb-4">
-                           <div class="text-3xl font-bold text-purple-600 mb-2">★</div>
-                           <h3 class="text-2xl font-bold text-gray-800">Premium</h3>
-                           <p class="text-gray-600 text-sm">Full Operational Control</p>
-                       </div>
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-gray-800">Premium</h3>
+                        <p class="text-gray-600 text-sm">Full Operational Control</p>
+                    </div>
                     <div class="mb-6">
-                            <span class="text-4xl font-bold text-gray-800">$349</span>
-                            <span class="text-gray-600 text-sm">/month</span>
-                            <p class="text-gray-600 text-sm mt-2">or <span class="font-semibold">$3,490/year</span> <span class="text-green-600 font-semibold">• 2 Months Free</span></p>
+                        <span class="text-4xl font-bold text-gray-800">$349</span>
+                        <span class="text-gray-600 text-sm">/month</span>
+                        <p class="text-gray-600 text-sm mt-2">or <span class="font-semibold">$3,490/year</span> <span class="text-green-600 font-semibold">• 2 Months Free</span></p>
                     </div>
                     <button onclick="window.location.href='contact-us.php'" class="w-full btn-autocalls border-2 border-purple-500 text-purple-600 font-semibold py-3 rounded-lg hover:bg-purple-50 transition duration-300 mb-8">
                         Schedule Demo
                     </button>
-                       <p class="text-gray-600 text-sm mb-6">Everything in Professional, plus deep analytics and priority expansion.</p>
-                       <ul class="space-y-3">
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Reservation Management</span>
+                    <p class="text-gray-600 text-sm mb-6">Everything in Professional, plus deep analytics and priority expansion.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Reservation Management</span>
                         </li>
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Order Processing</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Order Processing</span>
                         </li>
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Comprehensive Real-Time Dashboard</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Comprehensive Real-Time Dashboard</span>
                         </li>
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Advanced Reporting & Analytics</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Advanced Reporting & Analytics</span>
                         </li>
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Performance Metrics & Conversion Tracking</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Performance Metrics & Conversion Tracking</span>
                         </li>
-                           <li class="flex items-start space-x-3">
-                               <span class="text-purple-500 font-bold">✓</span>
-                               <span class="text-gray-700">Priority Integration & Feature Expansion</span>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-purple-500 font-bold">✓</span>
+                            <span class="text-gray-700">Priority Integration & Feature Expansion</span>
                         </li>
                     </ul>
                 </div>
