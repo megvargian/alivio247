@@ -320,15 +320,15 @@ include 'header.php';
                     if (entry.isIntersecting) {
                         const element = entry.target;
 
-                        // Add reveal animation class
-                        element.classList.add('animate');
+                        // Add reveal animation class (matches CSS)
+                        element.classList.add('revealed');
 
                         // Handle staggered children animations
                         if (element.classList.contains('stagger-children')) {
                             const children = element.querySelectorAll('.card-reveal, .text-reveal, .scale-up, .slide-in-left, .slide-in-right');
                             children.forEach((child, index) => {
                                 setTimeout(() => {
-                                    child.classList.add('animate');
+                                    child.classList.add('revealed');
                                 }, index * 100);
                             });
                         }
@@ -347,8 +347,8 @@ include 'header.php';
                 scrollObserver.observe(el);
             });
 
-            // Observe individual animation elements
-            document.querySelectorAll('.text-reveal, .card-reveal, .scale-up, .slide-in-left, .slide-in-right, .bg-reveal').forEach(el => {
+            // Observe individual animation elements and containers
+            document.querySelectorAll('.text-reveal, .card-reveal, .scale-up, .slide-in-left, .slide-in-right, .bg-reveal, .stagger-children').forEach(el => {
                 scrollObserver.observe(el);
             });
 
